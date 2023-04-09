@@ -19,6 +19,8 @@ final class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol?
     private var sectionsViewModel: [SectionViewModel] = [
         SectionViewModel(type: .calendar, rows: [Row.calendar(viewModel: CalendarViewModel(title: "Calendar"))]),
+        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
+        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
         SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))])
     ]
     
@@ -26,6 +28,9 @@ final class MainViewController: UIViewController {
     private lazy var tableView = make(UITableView()) {
         $0.delegate = self
         $0.dataSource = self
+        $0.register(CalendarTableViewCell.self,
+                    TaskTableViewCell.self
+        )
     }
     
     //MARK: - Life Cycles
@@ -71,12 +76,12 @@ extension MainViewController: UITableViewDataSource {
         switch rowType {
             
         case .calendar(viewModel: let viewModel):
-            let cell = UITableViewCell()
-            cell.backgroundColor = .red
+            let cell = tableView.dequeueReusableCell(withType: CalendarTableViewCell.self, for: indexPath)
+            cell.configureCell()
             return cell
         case .task(viewModel: let viewModel):
-            let cell = UITableViewCell()
-            cell.backgroundColor = .blue
+            let cell = tableView.dequeueReusableCell(withType: TaskTableViewCell.self, for: indexPath)
+            cell.configureCell()
             return cell
         }
     }
@@ -89,7 +94,7 @@ private extension MainViewController {
         addSubviews()
         setConstraints()
         
-        presenter?.viewDidLoad()
+//        presenter?.viewDidLoad()
     }
     
     func addSubviews() {

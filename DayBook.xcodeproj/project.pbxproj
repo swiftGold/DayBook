@@ -31,6 +31,9 @@
 		1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D429E29D3100FFBE04 /* Row.swift */; };
 		1E44B7D729E29D4900FFBE04 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */; };
 		1E44B7D929E29D5300FFBE04 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D829E29D5300FFBE04 /* TaskViewModel.swift */; };
+		1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */; };
+		1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */; };
+		1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		1E44B7D429E29D3100FFBE04 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		1E44B7D829E29D5300FFBE04 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
+		1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,9 @@
 		1E44B7CE29E29B4900FFBE04 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1E44B7DC29E2B20700FFBE04 /* subCells */,
+				1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */,
+				1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -266,6 +275,14 @@
 				1E44B7D429E29D3100FFBE04 /* Row.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		1E44B7DC29E2B20700FFBE04 /* subCells */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */,
+			);
+			path = subCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +417,9 @@
 			files = (
 				1E44B7BD29E2930E00FFBE04 /* TaskDetailViewController.swift in Sources */,
 				1E44B7CB29E2993A00FFBE04 /* Helpers.swift in Sources */,
+				1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */,
 				1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */,
+				1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */,
 				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
 				1E44B7D329E29D1C00FFBE04 /* SectionType.swift in Sources */,
 				1E44B7C429E298F500FFBE04 /* UIView.swift in Sources */,
@@ -415,6 +434,7 @@
 				1E44B7B529E2922800FFBE04 /* CalendarManager.swift in Sources */,
 				1E44B7C629E298F500FFBE04 /* UITableView.swift in Sources */,
 				1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */,
+				1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */,
 				1E44B7D129E29CFC00FFBE04 /* SectionViewModel.swift in Sources */,
 				1E44B7B729E2926700FFBE04 /* ModuleBuilder.swift in Sources */,
 			);
