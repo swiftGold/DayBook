@@ -1,0 +1,669 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */; };
+		1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */; };
+		1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */; };
+		1E44B78529E28E3F00FFBE04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E44B78429E28E3F00FFBE04 /* Assets.xcassets */; };
+		1E44B78829E28E3F00FFBE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E44B78629E28E3F00FFBE04 /* LaunchScreen.storyboard */; };
+		1E44B79329E28E3F00FFBE04 /* DayBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */; };
+		1E44B79D29E28E3F00FFBE04 /* DayBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */; };
+		1E44B79F29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */; };
+		1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7B129E28F8200FFBE04 /* MainPresenter.swift */; };
+		1E44B7B529E2922800FFBE04 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7B429E2922800FFBE04 /* CalendarManager.swift */; };
+		1E44B7B729E2926700FFBE04 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7B629E2926700FFBE04 /* ModuleBuilder.swift */; };
+		1E44B7B929E292F800FFBE04 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7B829E292F800FFBE04 /* NewTaskViewController.swift */; };
+		1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7BA29E2930100FFBE04 /* NewTaskPresenter.swift */; };
+		1E44B7BD29E2930E00FFBE04 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7BC29E2930E00FFBE04 /* TaskDetailViewController.swift */; };
+		1E44B7BF29E2931D00FFBE04 /* TaskDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7BE29E2931D00FFBE04 /* TaskDetailPresenter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E44B78F29E28E3F00FFBE04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E44B77029E28E3E00FFBE04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E44B77729E28E3E00FFBE04;
+			remoteInfo = DayBook;
+		};
+		1E44B79929E28E3F00FFBE04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E44B77029E28E3E00FFBE04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E44B77729E28E3E00FFBE04;
+			remoteInfo = DayBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E44B77829E28E3E00FFBE04 /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1E44B78429E28E3F00FFBE04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E44B78729E28E3F00FFBE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E44B78929E28E3F00FFBE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E44B78E29E28E3F00FFBE04 /* DayBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookTests.swift; sourceTree = "<group>"; };
+		1E44B79829E28E3F00FFBE04 /* DayBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookUITests.swift; sourceTree = "<group>"; };
+		1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1E44B7B129E28F8200FFBE04 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		1E44B7B429E2922800FFBE04 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		1E44B7B629E2926700FFBE04 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		1E44B7B829E292F800FFBE04 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		1E44B7BA29E2930100FFBE04 /* NewTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskPresenter.swift; sourceTree = "<group>"; };
+		1E44B7BC29E2930E00FFBE04 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		1E44B7BE29E2931D00FFBE04 /* TaskDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPresenter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E44B77529E28E3E00FFBE04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E44B78B29E28E3F00FFBE04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E44B79529E28E3F00FFBE04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E44B76F29E28E3E00FFBE04 = {
+			isa = PBXGroup;
+			children = (
+				1E44B77A29E28E3E00FFBE04 /* DayBook */,
+				1E44B79129E28E3F00FFBE04 /* DayBookTests */,
+				1E44B79B29E28E3F00FFBE04 /* DayBookUITests */,
+				1E44B77929E28E3E00FFBE04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E44B77929E28E3E00FFBE04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B77829E28E3E00FFBE04 /* DayBook.app */,
+				1E44B78E29E28E3F00FFBE04 /* DayBookTests.xctest */,
+				1E44B79829E28E3F00FFBE04 /* DayBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E44B77A29E28E3E00FFBE04 /* DayBook */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7AC29E28F1600FFBE04 /* Modules */,
+				1E44B7B329E2921600FFBE04 /* Managers */,
+				1E44B7AB29E28ED700FFBE04 /* Applications */,
+			);
+			path = DayBook;
+			sourceTree = "<group>";
+		};
+		1E44B79129E28E3F00FFBE04 /* DayBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */,
+			);
+			path = DayBookTests;
+			sourceTree = "<group>";
+		};
+		1E44B79B29E28E3F00FFBE04 /* DayBookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */,
+				1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */,
+			);
+			path = DayBookUITests;
+			sourceTree = "<group>";
+		};
+		1E44B7AB29E28ED700FFBE04 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */,
+				1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */,
+				1E44B78429E28E3F00FFBE04 /* Assets.xcassets */,
+				1E44B78629E28E3F00FFBE04 /* LaunchScreen.storyboard */,
+				1E44B78929E28E3F00FFBE04 /* Info.plist */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		1E44B7AC29E28F1600FFBE04 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7AD29E28F1C00FFBE04 /* Main */,
+				1E44B7AF29E28F6200FFBE04 /* NewTask */,
+				1E44B7B029E28F6900FFBE04 /* TaskDetail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1E44B7AD29E28F1C00FFBE04 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */,
+				1E44B7B129E28F8200FFBE04 /* MainPresenter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1E44B7AF29E28F6200FFBE04 /* NewTask */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7B829E292F800FFBE04 /* NewTaskViewController.swift */,
+				1E44B7BA29E2930100FFBE04 /* NewTaskPresenter.swift */,
+			);
+			path = NewTask;
+			sourceTree = "<group>";
+		};
+		1E44B7B029E28F6900FFBE04 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7BC29E2930E00FFBE04 /* TaskDetailViewController.swift */,
+				1E44B7BE29E2931D00FFBE04 /* TaskDetailPresenter.swift */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		1E44B7B329E2921600FFBE04 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7B429E2922800FFBE04 /* CalendarManager.swift */,
+				1E44B7B629E2926700FFBE04 /* ModuleBuilder.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E44B77729E28E3E00FFBE04 /* DayBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E44B7A229E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBook" */;
+			buildPhases = (
+				1E44B77429E28E3E00FFBE04 /* Sources */,
+				1E44B77529E28E3E00FFBE04 /* Frameworks */,
+				1E44B77629E28E3E00FFBE04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DayBook;
+			productName = DayBook;
+			productReference = 1E44B77829E28E3E00FFBE04 /* DayBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E44B78D29E28E3F00FFBE04 /* DayBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E44B7A529E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBookTests" */;
+			buildPhases = (
+				1E44B78A29E28E3F00FFBE04 /* Sources */,
+				1E44B78B29E28E3F00FFBE04 /* Frameworks */,
+				1E44B78C29E28E3F00FFBE04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E44B79029E28E3F00FFBE04 /* PBXTargetDependency */,
+			);
+			name = DayBookTests;
+			productName = DayBookTests;
+			productReference = 1E44B78E29E28E3F00FFBE04 /* DayBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E44B79729E28E3F00FFBE04 /* DayBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E44B7A829E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBookUITests" */;
+			buildPhases = (
+				1E44B79429E28E3F00FFBE04 /* Sources */,
+				1E44B79529E28E3F00FFBE04 /* Frameworks */,
+				1E44B79629E28E3F00FFBE04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E44B79A29E28E3F00FFBE04 /* PBXTargetDependency */,
+			);
+			name = DayBookUITests;
+			productName = DayBookUITests;
+			productReference = 1E44B79829E28E3F00FFBE04 /* DayBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E44B77029E28E3E00FFBE04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					1E44B77729E28E3E00FFBE04 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					1E44B78D29E28E3F00FFBE04 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1E44B77729E28E3E00FFBE04;
+					};
+					1E44B79729E28E3F00FFBE04 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1E44B77729E28E3E00FFBE04;
+					};
+				};
+			};
+			buildConfigurationList = 1E44B77329E28E3E00FFBE04 /* Build configuration list for PBXProject "DayBook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E44B76F29E28E3E00FFBE04;
+			productRefGroup = 1E44B77929E28E3E00FFBE04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E44B77729E28E3E00FFBE04 /* DayBook */,
+				1E44B78D29E28E3F00FFBE04 /* DayBookTests */,
+				1E44B79729E28E3F00FFBE04 /* DayBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E44B77629E28E3E00FFBE04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44B78829E28E3F00FFBE04 /* LaunchScreen.storyboard in Resources */,
+				1E44B78529E28E3F00FFBE04 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E44B78C29E28E3F00FFBE04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E44B79629E28E3F00FFBE04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E44B77429E28E3E00FFBE04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44B7BD29E2930E00FFBE04 /* TaskDetailViewController.swift in Sources */,
+				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
+				1E44B7B929E292F800FFBE04 /* NewTaskViewController.swift in Sources */,
+				1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */,
+				1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */,
+				1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */,
+				1E44B7BF29E2931D00FFBE04 /* TaskDetailPresenter.swift in Sources */,
+				1E44B7B529E2922800FFBE04 /* CalendarManager.swift in Sources */,
+				1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */,
+				1E44B7B729E2926700FFBE04 /* ModuleBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E44B78A29E28E3F00FFBE04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44B79329E28E3F00FFBE04 /* DayBookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E44B79429E28E3F00FFBE04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44B79F29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift in Sources */,
+				1E44B79D29E28E3F00FFBE04 /* DayBookUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E44B79029E28E3F00FFBE04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E44B77729E28E3E00FFBE04 /* DayBook */;
+			targetProxy = 1E44B78F29E28E3F00FFBE04 /* PBXContainerItemProxy */;
+		};
+		1E44B79A29E28E3F00FFBE04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E44B77729E28E3E00FFBE04 /* DayBook */;
+			targetProxy = 1E44B79929E28E3F00FFBE04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E44B78629E28E3F00FFBE04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E44B78729E28E3F00FFBE04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E44B7A029E28E3F00FFBE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1E44B7A129E28E3F00FFBE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E44B7A329E28E3F00FFBE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F39TQUV5PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DayBook/Applications/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Gold.DayBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E44B7A429E28E3F00FFBE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F39TQUV5PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DayBook/Applications/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Gold.DayBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1E44B7A629E28E3F00FFBE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F39TQUV5PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Gold.DayBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DayBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DayBook";
+			};
+			name = Debug;
+		};
+		1E44B7A729E28E3F00FFBE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F39TQUV5PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Gold.DayBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DayBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DayBook";
+			};
+			name = Release;
+		};
+		1E44B7A929E28E3F00FFBE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F39TQUV5PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Gold.DayBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DayBook;
+			};
+			name = Debug;
+		};
+		1E44B7AA29E28E3F00FFBE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F39TQUV5PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Gold.DayBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DayBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E44B77329E28E3E00FFBE04 /* Build configuration list for PBXProject "DayBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E44B7A029E28E3F00FFBE04 /* Debug */,
+				1E44B7A129E28E3F00FFBE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E44B7A229E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E44B7A329E28E3F00FFBE04 /* Debug */,
+				1E44B7A429E28E3F00FFBE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E44B7A529E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E44B7A629E28E3F00FFBE04 /* Debug */,
+				1E44B7A729E28E3F00FFBE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E44B7A829E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E44B7A929E28E3F00FFBE04 /* Debug */,
+				1E44B7AA29E28E3F00FFBE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E44B77029E28E3E00FFBE04 /* Project object */;
+}
