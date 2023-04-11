@@ -7,6 +7,14 @@
 
 import UIKit
 
+//MARK: - CalendarTableViewCellDelegate
+protocol CalendarTableViewCellDelegate: AnyObject {
+    func didTapPreviousMonthButton()
+    func didTapNextMonthButton()
+    func didTapCell(at index: Int)
+    func didTapAddTaskButton()
+}
+
 //MARK: - CalendarTableViewCell
 final class CalendarTableViewCell: UITableViewCell {
     
@@ -15,12 +23,13 @@ final class CalendarTableViewCell: UITableViewCell {
         let image = UIImage(named: "arrow.backward.circle")
         $0.addTarget(self, action: #selector(didTapPreviourMonthButton), for: .touchUpInside)
         $0.setImage(image, for: .normal)
-        $0.tintColor = .black
+        $0.tintColor = UIColor(named: "customPurple")
     }
     
     private let titleLabel = make(UILabel()) {
         $0.textAlignment = .center
-        $0.textColor = .black
+        $0.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.textColor = UIColor(named: "customRed")
         $0.text = "January/2023"
     }
     
@@ -28,7 +37,7 @@ final class CalendarTableViewCell: UITableViewCell {
         let image = UIImage(named: "arrow.right.circle")
         $0.addTarget(self, action: #selector(didTapNextMonthButton), for: .touchUpInside)
         $0.setImage(image, for: .normal)
-        $0.tintColor = .black
+        $0.tintColor = UIColor(named: "customPurple")
     }
     
     private lazy var stackView = make(UIStackView()) {
@@ -53,13 +62,17 @@ final class CalendarTableViewCell: UITableViewCell {
     private lazy var addTaskButton = make(UIButton(type: .system)) {
         $0.addTarget(self, action: #selector(didTapAddTaskButton), for: .touchUpInside)
         $0.setTitle("Add task", for: .normal)
-        $0.tintColor = .black
-        $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.black.cgColor
+        $0.tintColor = UIColor(named: "customBackground")
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        $0.backgroundColor = UIColor(named: "customPurple")
+        $0.layer.borderWidth = 1.4
+        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
         $0.layer.cornerRadius = 10
     }
     
+    weak var delegate: CalendarTableViewCellDelegate?
     private let daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    private var viewModel: CalendarViewModel?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -71,24 +84,26 @@ final class CalendarTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell() {
-        
+    func configureCell(with viewModel: CalendarViewModel) {
+        self.viewModel = viewModel
+        titleLabel.text = viewModel.title
+        collectionView.reloadData()
     }
     
 //MARK: - Objc methods
     @objc
     private func didTapPreviourMonthButton() {
-        print(#function)
+        delegate?.didTapPreviousMonthButton()
     }
     
     @objc
     private func didTapNextMonthButton() {
-        print(#function)
+        delegate?.didTapNextMonthButton()
     }
     
     @objc
     private func didTapAddTaskButton() {
-        print(#function)
+        delegate?.didTapAddTaskButton()
     }
 }
 
@@ -98,13 +113,19 @@ extension CalendarTableViewCell: UICollectionViewDelegate {}
 //MARK: - UICollectionViewDataSource impl
 extension CalendarTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 31
+        return viewModel?.days.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarViewCell", for: indexPath) as? CalendarViewCell else { fatalError() }
-        cell.configureCell()
+        guard let viewModel = viewModel?.days[indexPath.row] else { return UICollectionViewCell() }
+        cell.configureCell(with: viewModel)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.row
+        delegate?.didTapCell(at: index)
     }
 }
 
@@ -126,14 +147,16 @@ private extension CalendarTableViewCell {
         daysOfWeek.forEach {
             let label = UILabel()
             label.textAlignment = .center
-            label.textColor = .black
+            label.textColor = UIColor(named: "customGreen")
             label.text = $0
+            label.font = UIFont.boldSystemFont(ofSize: 16)
             label.translatesAutoresizingMaskIntoConstraints = false
             stackView.addArrangedSubview(label)
         }
     }
     
     func setupCell() {
+        backgroundColor = .clear
         addSubviews()
         setConstraints()
     }

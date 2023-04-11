@@ -10,7 +10,8 @@ import UIKit
 final class CalendarViewCell: UICollectionViewCell {
     
     let titleLabel = make(UILabel()) {
-        $0.textColor = .black
+        $0.textColor = UIColor(named: "customGreen")
+        $0.font = UIFont.boldSystemFont(ofSize: 18)
     }
     
     override init(frame: CGRect) {
@@ -22,13 +23,13 @@ final class CalendarViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell() {
-        titleLabel.text = "99"
+    func configureCell(with viewModel: DayViewModel) {
+        titleLabel.text = "\(viewModel.title)"
+        titleLabel.textColor = viewModel.isSelected ? UIColor(named: "customRed") : UIColor(named: "customPurple")
     }
 }
 
 private extension CalendarViewCell {
-    
     func setupCell() {
         myAddSubView(titleLabel)
         
