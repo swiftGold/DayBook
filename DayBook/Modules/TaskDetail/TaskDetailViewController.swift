@@ -13,7 +13,7 @@ protocol TaskDetailViewControllerProtocol: AnyObject {
 
 final class TaskDetailViewController: UIViewController {
     
-    private var presenter: TaskDetailPresenterProtocol?
+    var presenter: TaskDetailPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()

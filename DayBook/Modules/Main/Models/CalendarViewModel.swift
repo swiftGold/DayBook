@@ -7,10 +7,10 @@
 
 struct CalendarViewModel {
     let title: String
-//    let days: [DayViewModel]
+    let days: [DayViewModel]
 }
 
-//struct DayViewModel {
-//    let title: String
-//    let isSelected: Bool
-//}
+struct DayViewModel {
+    let title: String
+    let isSelected: Bool
+}

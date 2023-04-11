@@ -9,20 +9,21 @@ import UIKit
 
 //MARK: - MainViewControllerProtocol
 protocol MainViewControllerProtocol: AnyObject {
-    func updateTableView()
+    func updateTableView(with model: CalendarViewModel)
     func routeToNewTaskViewController(_ viewController: UIViewController)
     func routeToTaskDetailViewController(_ viewController: UIViewController)
 }
 
 final class MainViewController: UIViewController {
     
-    private var presenter: MainPresenterProtocol?
-    private var sectionsViewModel: [SectionViewModel] = [
-        SectionViewModel(type: .calendar, rows: [Row.calendar(viewModel: CalendarViewModel(title: "Calendar"))]),
-        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
-        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
-        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))])
-    ]
+    var presenter: MainPresenterProtocol?
+    private var sectionsViewModel: [SectionViewModel] = []
+//    private var sectionsViewModel: [SectionViewModel] = [
+//        SectionViewModel(type: .calendar, rows: [Row.calendar(viewModel: CalendarViewModel(title: "Calendar"))]),
+//        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
+//        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
+//        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))])
+//    ]
     
     //MARK: - UI
     private lazy var tableView = make(UITableView()) {
@@ -31,6 +32,7 @@ final class MainViewController: UIViewController {
         $0.register(CalendarTableViewCell.self,
                     TaskTableViewCell.self
         )
+        $0.backgroundColor = .clear
     }
     
     //MARK: - Life Cycles
@@ -42,16 +44,17 @@ final class MainViewController: UIViewController {
 
 //MARK: MainViewControllerProtocol impl
 extension MainViewController: MainViewControllerProtocol {
-    func updateTableView() {
-        
+    func updateTableView(with model: CalendarViewModel) {
+        sectionsViewModel = [SectionViewModel(type: .calendar, rows: [Row.calendar(viewModel: model)])]
+        tableView.reloadData()
     }
     
     func routeToNewTaskViewController(_ viewController: UIViewController) {
-        
+        present(viewController, animated: true)
     }
     
     func routeToTaskDetailViewController(_ viewController: UIViewController) {
-        
+        present(viewController, animated: true)
     }
 }
 
@@ -77,7 +80,8 @@ extension MainViewController: UITableViewDataSource {
             
         case .calendar(viewModel: let viewModel):
             let cell = tableView.dequeueReusableCell(withType: CalendarTableViewCell.self, for: indexPath)
-            cell.configureCell()
+            cell.delegate = self
+            cell.configureCell(with: viewModel)
             return cell
         case .task(viewModel: let viewModel):
             let cell = tableView.dequeueReusableCell(withType: TaskTableViewCell.self, for: indexPath)
@@ -87,14 +91,32 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
+extension MainViewController: CalendarTableViewCellDelegate {
+    func didTapCell(at index: Int) {
+        presenter?.didTapCell(at: index)
+    }
+    
+    func didTapPreviousMonthButton() {
+        presenter?.didTapPreviousMonthButton()
+    }
+    
+    func didTapNextMonthButton() {
+        presenter?.didTapNextMonth()
+    }
+    
+    func didTapAddTaskButton() {
+        presenter?.didTapAddTaskButton()
+    }
+}
+
 //MARK: - private methods
 private extension MainViewController {
     func setupViewController() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "customBackground")
         addSubviews()
         setConstraints()
         
-//        presenter?.viewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     func addSubviews() {
