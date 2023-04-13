@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		012854D449A86E5623150227 /* Pods_DayBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F44BD7CC4C697DD2BFC537 /* Pods_DayBookTests.framework */; };
+		1E12B39629E550A2007404AB /* DetailTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */; };
+		1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39729E550F3007404AB /* TaskModelRM.swift */; };
+		1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39929E55168007404AB /* TaskViewModel.swift */; };
+		1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39B29E551D1007404AB /* TaskRealmModel.swift */; };
 		1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */; };
 		1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */; };
 		1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */; };
@@ -31,12 +35,12 @@
 		1E44B7D329E29D1C00FFBE04 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D229E29D1C00FFBE04 /* SectionType.swift */; };
 		1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D429E29D3100FFBE04 /* Row.swift */; };
 		1E44B7D729E29D4900FFBE04 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */; };
-		1E44B7D929E29D5300FFBE04 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D829E29D5300FFBE04 /* TaskViewModel.swift */; };
+		1E44B7D929E29D5300FFBE04 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D829E29D5300FFBE04 /* TaskModel.swift */; };
 		1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */; };
 		1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */; };
 		1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */; };
 		1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E129E3317C00FFBE04 /* Double.swift */; };
-		1E44B7E429E3F90B00FFBE04 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E329E3F90B00FFBE04 /* RealmManager.swift */; };
+		1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E329E3F90B00FFBE04 /* RealmService.swift */; };
 		1E44B7E929E4026600FFBE04 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E829E4026600FFBE04 /* Item.swift */; };
 		1E44B7EB29E4026E00FFBE04 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7EA29E4026E00FFBE04 /* Category.swift */; };
 		B51338957152F9351133FE0F /* Pods_DayBook_DayBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F886F57DA6293BD0633607 /* Pods_DayBook_DayBookUITests.framework */; };
@@ -62,6 +66,10 @@
 
 /* Begin PBXFileReference section */
 		13F886F57DA6293BD0633607 /* Pods_DayBook_DayBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayBook_DayBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewModel.swift; sourceTree = "<group>"; };
+		1E12B39729E550F3007404AB /* TaskModelRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRM.swift; sourceTree = "<group>"; };
+		1E12B39929E55168007404AB /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		1E12B39B29E551D1007404AB /* TaskRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealmModel.swift; sourceTree = "<group>"; };
 		1E44B77829E28E3E00FFBE04 /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,12 +97,12 @@
 		1E44B7D229E29D1C00FFBE04 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
 		1E44B7D429E29D3100FFBE04 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
-		1E44B7D829E29D5300FFBE04 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		1E44B7D829E29D5300FFBE04 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
 		1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		1E44B7E129E3317C00FFBE04 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		1E44B7E329E3F90B00FFBE04 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		1E44B7E329E3F90B00FFBE04 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		1E44B7E829E4026600FFBE04 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1E44B7EA29E4026E00FFBE04 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5B3B84A8D1D4F9EC35BF7177 /* Pods-DayBook-DayBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook-DayBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,7 +263,7 @@
 			children = (
 				1E44B7B429E2922800FFBE04 /* CalendarManager.swift */,
 				1E44B7B629E2926700FFBE04 /* ModuleBuilder.swift */,
-				1E44B7E329E3F90B00FFBE04 /* RealmManager.swift */,
+				1E44B7E329E3F90B00FFBE04 /* RealmService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -294,7 +302,11 @@
 			children = (
 				1E44B7D029E29CFC00FFBE04 /* SectionViewModel.swift */,
 				1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */,
-				1E44B7D829E29D5300FFBE04 /* TaskViewModel.swift */,
+				1E12B39929E55168007404AB /* TaskViewModel.swift */,
+				1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */,
+				1E12B39729E550F3007404AB /* TaskModelRM.swift */,
+				1E44B7D829E29D5300FFBE04 /* TaskModel.swift */,
+				1E12B39B29E551D1007404AB /* TaskRealmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -590,19 +602,23 @@
 				1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */,
 				1E44B7E929E4026600FFBE04 /* Item.swift in Sources */,
 				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
+				1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */,
 				1E44B7D329E29D1C00FFBE04 /* SectionType.swift in Sources */,
 				1E44B7C429E298F500FFBE04 /* UIView.swift in Sources */,
+				1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */,
+				1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */,
 				1E44B7EB29E4026E00FFBE04 /* Category.swift in Sources */,
 				1E44B7D729E29D4900FFBE04 /* CalendarViewModel.swift in Sources */,
 				1E44B7B929E292F800FFBE04 /* NewTaskViewController.swift in Sources */,
 				1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */,
 				1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */,
 				1E44B7C529E298F500FFBE04 /* UiTableViewCell.swift in Sources */,
+				1E12B39629E550A2007404AB /* DetailTaskViewModel.swift in Sources */,
 				1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */,
-				1E44B7D929E29D5300FFBE04 /* TaskViewModel.swift in Sources */,
+				1E44B7D929E29D5300FFBE04 /* TaskModel.swift in Sources */,
 				1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */,
 				1E44B7BF29E2931D00FFBE04 /* TaskDetailPresenter.swift in Sources */,
-				1E44B7E429E3F90B00FFBE04 /* RealmManager.swift in Sources */,
+				1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */,
 				1E44B7B529E2922800FFBE04 /* CalendarManager.swift in Sources */,
 				1E44B7C629E298F500FFBE04 /* UITableView.swift in Sources */,
 				1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */,

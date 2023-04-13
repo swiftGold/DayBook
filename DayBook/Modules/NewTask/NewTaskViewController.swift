@@ -8,9 +8,14 @@
 import UIKit
 import RealmSwift
 
+//MARK: - NewTaskViewControllerDelegate
+protocol NewTaskViewControllerDelegate: AnyObject {
+    func didSaveNewTask(with taskModel: TaskModel)
+}
+
 //MARK: - NewTaskViewControllerProtocol
 protocol NewTaskViewControllerProtocol: AnyObject {
-    
+    func createNewTask(with model: TaskModel)
 }
 
 //MARK: - NewTaskViewController
@@ -85,6 +90,7 @@ final class NewTaskViewController: UIViewController {
     
     //MARK: - Properties
     var presenter: NewTaskPresenterProtocol?
+    weak var delegate: NewTaskViewControllerDelegate?
     
     //MARK: - Life cycles
     override func viewDidLoad() {
@@ -95,13 +101,29 @@ final class NewTaskViewController: UIViewController {
     //MARK: - Objc methods
     @objc
     private func didTapAddTaskButton() {
- 
+        guard let title = taskNameTextField.text,
+              let description = descriptionTextView.text else
+        {
+            print("title or description is not found")
+            return
+        }
+        let startDate = startDatePicker.date
+        let finishDate = finishDatePicker.date
+        
+        presenter?.addTaskButtonTapped(title: title,
+                                       description: description,
+                                       startDate: startDate,
+                                       finishDate: finishDate
+        )
     }
 }
 
 //MARK: - NewTaskViewControllerProtocol
 extension NewTaskViewController: NewTaskViewControllerProtocol {
-    
+    func createNewTask(with model: TaskModel) {
+        delegate?.didSaveNewTask(with: model)
+        dismiss(animated: true)
+    }
 }
 
 //MARK: - Private methods
