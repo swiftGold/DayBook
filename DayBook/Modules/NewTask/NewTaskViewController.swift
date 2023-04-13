@@ -16,6 +16,7 @@ protocol NewTaskViewControllerDelegate: AnyObject {
 //MARK: - NewTaskViewControllerProtocol
 protocol NewTaskViewControllerProtocol: AnyObject {
     func createNewTask(with model: TaskModel)
+    func dateError()
 }
 
 //MARK: - NewTaskViewController
@@ -44,6 +45,7 @@ final class NewTaskViewController: UIViewController {
     private lazy var startDatePicker = make(UIDatePicker()) {
         $0.datePickerMode = .dateAndTime
         $0.tintColor = .black
+        $0.locale = Locale(identifier: "en_GB")
     }
     
     private let finishDateLabel = make(UILabel()) {
@@ -54,6 +56,7 @@ final class NewTaskViewController: UIViewController {
     private lazy var finishDatePicker = make(UIDatePicker()) {
         $0.datePickerMode = .dateAndTime
         $0.tintColor = .black
+        $0.locale = Locale(identifier: "en_GB")
     }
     
     private let descriptionLabel = make(UILabel()) {
@@ -123,6 +126,11 @@ extension NewTaskViewController: NewTaskViewControllerProtocol {
     func createNewTask(with model: TaskModel) {
         delegate?.didSaveNewTask(with: model)
         dismiss(animated: true)
+    }
+    
+    func dateError() {
+        finishDateLabel.text = "Finish date should to be more then start date"
+        finishDateLabel.textColor = UIColor(named: "customRed")
     }
 }
 

@@ -19,6 +19,9 @@ protocol CalendarManagerProtocol {
     func dayNumberFromFullDate(date: Date?) -> String
     func isDatesEqual(firstDate: Date?, secondDate: Date?) -> Bool
     func timeFromFullDate(date: Date) -> String
+    func hourFromFullDate(date: Date) -> String
+    func saveDateInTimeStamp(date: Date) -> TimeInterval
+    func fetchDateFromTimeStamp(ti: TimeInterval) -> String
 }
 
 final class CalendarManager {
@@ -113,6 +116,14 @@ extension CalendarManager: CalendarManagerProtocol {
     //Строковое значение времени дня из полной даты с учетом таймзоны
     func timeFromFullDate(date: Date) -> String {
         dateFormatter.dateFormat = "H:mm"
+//        dateFormatter.timeZone = .current
+        return dateFormatter.string(from: date)
+    }
+    
+    //Строковое значение часа из полной даты с учетом таймзоны
+    func hourFromFullDate(date: Date) -> String {
+        dateFormatter.dateFormat = "H"
+        dateFormatter.timeZone = .current
         return dateFormatter.string(from: date)
     }
     

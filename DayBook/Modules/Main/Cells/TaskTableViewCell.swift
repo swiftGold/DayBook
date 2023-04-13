@@ -10,12 +10,17 @@ import UIKit
 final class TaskTableViewCell: UITableViewCell {
     
     //MARK: - UI
+    private let timeBracketLabel = make(UILabel()) {
+        $0.textColor = UIColor(named: "customRed")
+    }
+    
     private let titleLabel = make(UILabel()) {
         $0.numberOfLines = 0
+        $0.textColor = UIColor(named: "customPurple")
     }
     
     private let datetimeLabel = make(UILabel()) {
-        $0.text = ""
+        $0.textColor = UIColor(named: "customPurple")
     }
     
     //MARK: - Properties
@@ -33,14 +38,12 @@ final class TaskTableViewCell: UITableViewCell {
     
     func configureCell(with model: TaskViewModel) {
         viewModel = model
-        
+    
+        timeBracketLabel.text = viewModel?.timeBracket
         guard let date = viewModel?.datetime else { return }
         let time = calendarManager.timeFromFullDate(date: date)
-        
         datetimeLabel.text = time
-        titleLabel.text = model.title
-
-        print(model.datetime)
+        titleLabel.text = viewModel?.title
     }
 }
 
@@ -55,20 +58,25 @@ private extension TaskTableViewCell {
         selectionStyle = .none
         backgroundColor = .clear
         
+        myAddSubView(timeBracketLabel)
         myAddSubView(titleLabel)
         myAddSubView(datetimeLabel)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            timeBracketLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            timeBracketLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            timeBracketLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            timeBracketLabel.widthAnchor.constraint(equalToConstant: 120),
+            
+            titleLabel.leadingAnchor.constraint(equalTo: timeBracketLabel.trailingAnchor, constant: 20),
+            titleLabel.centerYAnchor.constraint(equalTo: timeBracketLabel.centerYAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: datetimeLabel.leadingAnchor, constant: -8),
             
             datetimeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            datetimeLabel.widthAnchor.constraint(equalToConstant: 100),
-            datetimeLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
+            datetimeLabel.widthAnchor.constraint(equalToConstant: 50),
+            datetimeLabel.centerYAnchor.constraint(equalTo: timeBracketLabel.centerYAnchor)
         ])
     }
 }
