@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: - MainViewControllerProtocol
 protocol MainViewControllerProtocol: AnyObject {
-    func updateTableView(with model: CalendarViewModel)
+    func updateTableView(with model: [SectionViewModel])
     func routeToNewTaskViewController(_ viewController: UIViewController)
     func routeToTaskDetailViewController(_ viewController: UIViewController)
 }
@@ -18,12 +18,6 @@ final class MainViewController: UIViewController {
     
     var presenter: MainPresenterProtocol?
     private var sectionsViewModel: [SectionViewModel] = []
-//    private var sectionsViewModel: [SectionViewModel] = [
-//        SectionViewModel(type: .calendar, rows: [Row.calendar(viewModel: CalendarViewModel(title: "Calendar"))]),
-//        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
-//        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))]),
-//        SectionViewModel(type: .task, rows: [Row.task(viewModel: TaskViewModel(title: "Task"))])
-//    ]
     
     //MARK: - UI
     private lazy var tableView = make(UITableView()) {
@@ -44,8 +38,8 @@ final class MainViewController: UIViewController {
 
 //MARK: MainViewControllerProtocol impl
 extension MainViewController: MainViewControllerProtocol {
-    func updateTableView(with model: CalendarViewModel) {
-        sectionsViewModel = [SectionViewModel(type: .calendar, rows: [Row.calendar(viewModel: model)])]
+    func updateTableView(with model: [SectionViewModel]) {
+        sectionsViewModel = model
         tableView.reloadData()
     }
     
@@ -59,7 +53,11 @@ extension MainViewController: MainViewControllerProtocol {
 }
 
 //MARK: - UITableViewDelegate impl
-extension MainViewController: UITableViewDelegate {}
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didTapTaskCell(at: indexPath.item)
+    }
+}
 
 //MARK: - UITableViewDataSource impl
 extension MainViewController: UITableViewDataSource {
@@ -85,7 +83,7 @@ extension MainViewController: UITableViewDataSource {
             return cell
         case .task(viewModel: let viewModel):
             let cell = tableView.dequeueReusableCell(withType: TaskTableViewCell.self, for: indexPath)
-            cell.configureCell()
+            cell.configureCell(with: viewModel)
             return cell
         }
     }
@@ -93,7 +91,7 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: CalendarTableViewCellDelegate {
     func didTapCell(at index: Int) {
-        presenter?.didTapCell(at: index)
+        presenter?.didTapCalendarCell(at: index)
     }
     
     func didTapPreviousMonthButton() {

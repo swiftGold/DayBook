@@ -7,8 +7,8 @@
 
 protocol ModuleBuilderProtocol {
     
-    func buildNewTaskModule() -> NewTaskViewController
-    func buildTaskDetailModule() -> TaskDetailViewController
+    func buildNewTaskModule(delegate: NewTaskViewControllerDelegate) -> NewTaskViewController
+    func buildTaskDetailModule(_ detailViewModel: DetailTaskViewModel) -> TaskDetailViewController
     func buildRootModule() -> MainViewController
 }
 
@@ -34,20 +34,27 @@ extension ModuleBuilder: ModuleBuilderProtocol {
         return viewController
     }
     
-    func buildNewTaskModule() -> NewTaskViewController {
+    //добавялем делегат для создания новой таски
+    func buildNewTaskModule(delegate: NewTaskViewControllerDelegate) -> NewTaskViewController {
         
         let viewController = NewTaskViewController()
         let presenter = NewTaskPresenter()
+        
+        viewController.delegate = delegate
         viewController.presenter = presenter
         presenter.viewController = viewController
         
         return viewController
     }
     
-    func buildTaskDetailModule() -> TaskDetailViewController {
+    func buildTaskDetailModule(_ detailViewModel: DetailTaskViewModel) -> TaskDetailViewController {
         
         let viewController = TaskDetailViewController()
-        let presenter = TaskDetailPresenter()
+        let calendarManager = CalendarManager()
+        let presenter = TaskDetailPresenter(
+            calendarManager: calendarManager,
+            detailViewModel: detailViewModel
+        )
         
         viewController.presenter = presenter
         presenter.viewController = viewController
