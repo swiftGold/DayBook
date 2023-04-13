@@ -56,7 +56,6 @@ extension MainPresenter: MainPresenterProtocol {
             
         let calendarViewModel = fetchCalendarViewModel()
         let taskViewModel = fetchTaskViewModel()
-        
         let sectionViewModel: [SectionViewModel] = [
             SectionViewModel(type: .calendar,
                              rows: [.calendar(viewModel: calendarViewModel)]
@@ -109,7 +108,6 @@ extension MainPresenter: MainPresenterProtocol {
 extension MainPresenter: NewTaskViewControllerDelegate {
     func didSaveNewTask(with taskModel: TaskModel) {
         tasks.append(taskModel)
-        print(tasks)
         viewDidLoad()
     }
 }
@@ -128,14 +126,25 @@ private extension MainPresenter {
     
     func fetchTaskViewModel() -> [Row] {
         let filteredArray = fetchFilteredTasks()
+        
         let tasksViewModel = filteredArray.map { taskModel -> Row in
+            let timeHour = calendarManager.hourFromFullDate(date: taskModel.dateStart)
+            let timeBracket = fetchTimeBracket(with: timeHour)
             let taskViewModel = TaskViewModel(title: taskModel.title,
-                                              datetime: taskModel.dateStart
+                                              datetime: taskModel.dateStart,
+                                              timeBracket: timeBracket
             )
             let item = Row.task(viewModel: taskViewModel)
             return item
         }
         return tasksViewModel
+    }
+    
+    func fetchTimeBracket(with hourString: String) -> String {
+        var hour2: Int = 0
+        guard let hour = Int(hourString) else { fatalError() }
+        hour2 = hour + 1
+        return "\(hour).00 - \(hour2).00"
     }
     
     func fetchFilteredTasks() -> [TaskModel] {
@@ -145,7 +154,8 @@ private extension MainPresenter {
             
             return day1 == day2
         }
-        return filteredArray
+        let dateSorted = filteredArray.sorted { $0.dateStart < $1.dateStart }
+        return dateSorted
     }
     
     func fetchAllTasksForAllDays() {

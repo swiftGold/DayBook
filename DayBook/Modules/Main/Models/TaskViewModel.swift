@@ -11,4 +11,5 @@ struct TaskViewModel {
     let id = UUID()
     let title: String
     let datetime: Date
+    let timeBracket: String
 }
