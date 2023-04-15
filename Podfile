@@ -6,6 +6,7 @@ target 'DayBook' do
 
   # Pods for DayBook
 	pod 'RealmSwift', '~>10'
+	pod 'SwiftyJSON', '~> 4.0'
 
   target 'DayBookTests' do
     inherit! :search_paths

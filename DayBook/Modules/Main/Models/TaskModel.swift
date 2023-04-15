@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TaskModel {
+struct TaskModel: Codable {
     let id: UUID
     let title: String
     let description: String
@@ -30,7 +30,7 @@ struct TaskModel {
     }
     
     init(taskRealmModel: TaskModelRM) {
-        self.id = UUID(uuidString: taskRealmModel.id)  ?? UUID()
+        self.id = taskRealmModel.id
         self.title = taskRealmModel.title
         self.description = taskRealmModel.descrip
         self.dateStart = taskRealmModel.dateStart
