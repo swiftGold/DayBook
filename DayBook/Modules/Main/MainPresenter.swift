@@ -7,6 +7,8 @@
 
 import Foundation
 import RealmSwift
+//TODO: - delete after
+import SwiftyJSON
 
 //MARK: - MainPresenterProtocol
 protocol MainPresenterProtocol {
@@ -21,6 +23,8 @@ protocol MainPresenterProtocol {
 //MARK: - MainPresenter
 final class MainPresenter {
     weak var viewController: MainViewControllerProtocol?
+    //TODO: - delete after
+    let realm = try! Realm()
     
     private var currentDate = Date()
     private var daysArray: [Date?] = []
@@ -35,12 +39,16 @@ final class MainPresenter {
     private let realmService = RealmService()
     private let calendarManager: CalendarManagerProtocol
     private let moduleBuilder: ModuleBuilder
+    private let apiService: APIServiceProtocol
+    private let postService = PostService()
     
     init(calendarManager: CalendarManagerProtocol,
-         moduleBuilder: ModuleBuilder
+         moduleBuilder: ModuleBuilder,
+         apiService: APIServiceProtocol
     ) {
         self.calendarManager = calendarManager
         self.moduleBuilder = moduleBuilder
+        self.apiService = apiService
     }
 }
 
@@ -48,12 +56,15 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterProtocol {
     func viewDidLoad() {
         daysArray.removeAll()
+        
+        addTasksFromJSONFile()
+        
         let daysInMonth = calendarManager.daysInMonth(date: currentDate)
         guard let firstDayOfMonth = calendarManager.firstOfMonth(date: currentDate) else { return }
         let startingSpaces = calendarManager.weekDay(date: firstDayOfMonth)
         fetchDaysCalendarStructure(startingSpaces, daysInMonth, firstDayOfMonth)
         fetchAllTasksForAllDays()
-            
+        
         let calendarViewModel = fetchCalendarViewModel()
         let taskViewModel = fetchTaskViewModel()
         let sectionViewModel: [SectionViewModel] = [
@@ -82,6 +93,7 @@ extension MainPresenter: MainPresenterProtocol {
         guard let date = daysArray[index] else {
             return
         }
+        
         selectedDate = date
         viewDidLoad()
     }
@@ -107,6 +119,7 @@ extension MainPresenter: MainPresenterProtocol {
 //MARK: - NewTaskViewControllerDelegate impl
 extension MainPresenter: NewTaskViewControllerDelegate {
     func didSaveNewTask(with taskModel: TaskModel) {
+        
         tasks.append(taskModel)
         viewDidLoad()
     }
@@ -162,6 +175,28 @@ private extension MainPresenter {
         let realmTaskModel = Array(realmService.read(TaskModelRM.self))
         tasks = realmTaskModel.map { TaskModel(taskRealmModel: $0) }
     }
+
+    func addTasksFromJSONFile() {
+        let object = postService.fetchTasksFromJSON()
+        let objectsFromRealm = Array(realmService.read(TaskModelRM.self))
+        
+        let realmObjects = object.map { TaskModelRM(taskModel: $0) }
+        
+           realmObjects.forEach { realmObject in
+               if objectsFromRealm.contains(where: {_ in realmObject.id == realmObject.id}) {
+                   print("just in base")
+               } else {
+                   realmService.create(realmObject) { result in
+                       switch result {
+                       case .success:
+                           print("Success created task")
+                       case .failure(let error):
+                           print("Cant create realm object (Task) \(error.localizedDescription)")
+                       }
+                   }
+               }
+           }
+    }
     
     func fetchDaysCalendarStructure(_ startingSpaces: Int, _ daysInMonth: Int, _ firstDayOfMonth: Date) {
         var count: Int = 1
@@ -185,3 +220,4 @@ private extension MainPresenter {
         return title
     }
 }
+

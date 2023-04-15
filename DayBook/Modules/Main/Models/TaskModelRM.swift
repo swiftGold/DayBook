@@ -8,7 +8,7 @@
 import RealmSwift
 
 final class TaskModelRM: Object {
-    @objc dynamic var id: String = ""
+    @objc dynamic var id: UUID = UUID()
     @objc dynamic var title: String = ""
     @objc dynamic var descrip: String = ""
     @objc dynamic var dateStart: Date = Date()
@@ -16,6 +16,7 @@ final class TaskModelRM: Object {
         
     convenience init(taskModel: TaskModel) {
         self.init()
+        id = taskModel.id
         title = taskModel.title
         descrip = taskModel.description
         dateStart = taskModel.dateStart
