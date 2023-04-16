@@ -12,18 +12,13 @@
 		1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39729E550F3007404AB /* TaskModelRM.swift */; };
 		1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39929E55168007404AB /* TaskViewModel.swift */; };
 		1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39B29E551D1007404AB /* TaskRealmModel.swift */; };
-		1E1D9B9929E81DA400E46603 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9629E81DA400E46603 /* NetworkManager.swift */; };
-		1E1D9B9A29E81DA400E46603 /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9729E81DA400E46603 /* JSONDecoderManager.swift */; };
-		1E1D9B9B29E81DA400E46603 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9829E81DA400E46603 /* APIService.swift */; };
-		1E1D9B9D29E8254A00E46603 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9C29E8254A00E46603 /* PostService.swift */; };
-		1E425D7229E8572E00F329D1 /* JSONTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E425D7129E8572E00F329D1 /* JSONTaskModel.swift */; };
+		1E1D9B9D29E8254A00E46603 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9C29E8254A00E46603 /* JSONService.swift */; };
 		1E425D7429E997C800F329D1 /* JSONModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E425D7329E997C800F329D1 /* JSONModel.json */; };
 		1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */; };
 		1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */; };
 		1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */; };
 		1E44B78529E28E3F00FFBE04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E44B78429E28E3F00FFBE04 /* Assets.xcassets */; };
 		1E44B78829E28E3F00FFBE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E44B78629E28E3F00FFBE04 /* LaunchScreen.storyboard */; };
-		1E44B79329E28E3F00FFBE04 /* DayBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */; };
 		1E44B79D29E28E3F00FFBE04 /* DayBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */; };
 		1E44B79F29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */; };
 		1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7B129E28F8200FFBE04 /* MainPresenter.swift */; };
@@ -47,8 +42,9 @@
 		1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */; };
 		1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E129E3317C00FFBE04 /* Double.swift */; };
 		1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E329E3F90B00FFBE04 /* RealmService.swift */; };
-		1E44B7E929E4026600FFBE04 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E829E4026600FFBE04 /* Item.swift */; };
-		1E44B7EB29E4026E00FFBE04 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7EA29E4026E00FFBE04 /* Category.swift */; };
+		1EFF86DB29EC095B00C1C224 /* MainViewProtocolSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */; };
+		1EFF86DD29EC1D3500C1C224 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DC29EC1D3500C1C224 /* MainTests.swift */; };
+		1EFF86E029EC5C6800C1C224 /* FailureJSONMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DF29EC5C6800C1C224 /* FailureJSONMock.swift */; };
 		B51338957152F9351133FE0F /* Pods_DayBook_DayBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F886F57DA6293BD0633607 /* Pods_DayBook_DayBookUITests.framework */; };
 		D4D729133C0F8D21066072CB /* Pods_DayBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6565AE75A0E5108B990F7E /* Pods_DayBook.framework */; };
 /* End PBXBuildFile section */
@@ -76,11 +72,7 @@
 		1E12B39729E550F3007404AB /* TaskModelRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRM.swift; sourceTree = "<group>"; };
 		1E12B39929E55168007404AB /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		1E12B39B29E551D1007404AB /* TaskRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealmModel.swift; sourceTree = "<group>"; };
-		1E1D9B9629E81DA400E46603 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		1E1D9B9729E81DA400E46603 /* JSONDecoderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
-		1E1D9B9829E81DA400E46603 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		1E1D9B9C29E8254A00E46603 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		1E425D7129E8572E00F329D1 /* JSONTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTaskModel.swift; sourceTree = "<group>"; };
+		1E1D9B9C29E8254A00E46603 /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		1E425D7329E997C800F329D1 /* JSONModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONModel.json; sourceTree = "<group>"; };
 		1E44B77829E28E3E00FFBE04 /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +82,6 @@
 		1E44B78729E28E3F00FFBE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E44B78929E28E3F00FFBE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E44B78E29E28E3F00FFBE04 /* DayBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookTests.swift; sourceTree = "<group>"; };
 		1E44B79829E28E3F00FFBE04 /* DayBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookUITests.swift; sourceTree = "<group>"; };
 		1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -115,8 +106,9 @@
 		1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		1E44B7E129E3317C00FFBE04 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1E44B7E329E3F90B00FFBE04 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		1E44B7E829E4026600FFBE04 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		1E44B7EA29E4026E00FFBE04 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocolSpy.swift; sourceTree = "<group>"; };
+		1EFF86DC29EC1D3500C1C224 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
+		1EFF86DF29EC5C6800C1C224 /* FailureJSONMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureJSONMock.swift; sourceTree = "<group>"; };
 		5B3B84A8D1D4F9EC35BF7177 /* Pods-DayBook-DayBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook-DayBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CA9FCB768553225A589B98D /* Pods-DayBook-DayBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook-DayBookUITests.release.xcconfig"; path = "Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D6565AE75A0E5108B990F7E /* Pods_DayBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,7 +195,9 @@
 		1E44B79129E28E3F00FFBE04 /* DayBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */,
+				1EFF86DE29EC5C5300C1C224 /* Mock */,
+				1EFF86D129EC07FE00C1C224 /* Spy */,
+				1EA1FF9B29EBCDFC00F4A060 /* MainTests */,
 			);
 			path = DayBookTests;
 			sourceTree = "<group>";
@@ -256,7 +250,6 @@
 			children = (
 				1E44B7B829E292F800FFBE04 /* NewTaskViewController.swift */,
 				1E44B7BA29E2930100FFBE04 /* NewTaskPresenter.swift */,
-				1E44B7E729E3FC1300FFBE04 /* Models */,
 			);
 			path = NewTask;
 			sourceTree = "<group>";
@@ -276,10 +269,7 @@
 				1E44B7B429E2922800FFBE04 /* CalendarManager.swift */,
 				1E44B7B629E2926700FFBE04 /* ModuleBuilder.swift */,
 				1E44B7E329E3F90B00FFBE04 /* RealmService.swift */,
-				1E1D9B9829E81DA400E46603 /* APIService.swift */,
-				1E1D9B9729E81DA400E46603 /* JSONDecoderManager.swift */,
-				1E1D9B9629E81DA400E46603 /* NetworkManager.swift */,
-				1E1D9B9C29E8254A00E46603 /* PostService.swift */,
+				1E1D9B9C29E8254A00E46603 /* JSONService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -322,7 +312,6 @@
 				1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */,
 				1E12B39729E550F3007404AB /* TaskModelRM.swift */,
 				1E44B7D829E29D5300FFBE04 /* TaskModel.swift */,
-				1E425D7129E8572E00F329D1 /* JSONTaskModel.swift */,
 				1E12B39B29E551D1007404AB /* TaskRealmModel.swift */,
 				1E425D7329E997C800F329D1 /* JSONModel.json */,
 			);
@@ -356,13 +345,28 @@
 			path = subCells;
 			sourceTree = "<group>";
 		};
-		1E44B7E729E3FC1300FFBE04 /* Models */ = {
+		1EA1FF9B29EBCDFC00F4A060 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E44B7E829E4026600FFBE04 /* Item.swift */,
-				1E44B7EA29E4026E00FFBE04 /* Category.swift */,
+				1EFF86DC29EC1D3500C1C224 /* MainTests.swift */,
 			);
-			path = Models;
+			path = MainTests;
+			sourceTree = "<group>";
+		};
+		1EFF86D129EC07FE00C1C224 /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		1EFF86DE29EC5C5300C1C224 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1EFF86DF29EC5C6800C1C224 /* FailureJSONMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		6D625B4BF28F22718A382226 /* Frameworks */ = {
@@ -618,36 +622,30 @@
 				1E44B7CB29E2993A00FFBE04 /* Helpers.swift in Sources */,
 				1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */,
 				1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */,
-				1E1D9B9B29E81DA400E46603 /* APIService.swift in Sources */,
 				1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */,
-				1E44B7E929E4026600FFBE04 /* Item.swift in Sources */,
 				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
 				1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */,
 				1E44B7D329E29D1C00FFBE04 /* SectionType.swift in Sources */,
 				1E44B7C429E298F500FFBE04 /* UIView.swift in Sources */,
 				1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */,
-				1E425D7229E8572E00F329D1 /* JSONTaskModel.swift in Sources */,
 				1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */,
-				1E44B7EB29E4026E00FFBE04 /* Category.swift in Sources */,
 				1E44B7D729E29D4900FFBE04 /* CalendarViewModel.swift in Sources */,
 				1E44B7B929E292F800FFBE04 /* NewTaskViewController.swift in Sources */,
 				1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */,
 				1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */,
 				1E44B7C529E298F500FFBE04 /* UiTableViewCell.swift in Sources */,
-				1E1D9B9929E81DA400E46603 /* NetworkManager.swift in Sources */,
 				1E12B39629E550A2007404AB /* DetailTaskViewModel.swift in Sources */,
 				1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */,
 				1E44B7D929E29D5300FFBE04 /* TaskModel.swift in Sources */,
 				1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */,
 				1E44B7BF29E2931D00FFBE04 /* TaskDetailPresenter.swift in Sources */,
-				1E1D9B9D29E8254A00E46603 /* PostService.swift in Sources */,
+				1E1D9B9D29E8254A00E46603 /* JSONService.swift in Sources */,
 				1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */,
 				1E44B7B529E2922800FFBE04 /* CalendarManager.swift in Sources */,
 				1E44B7C629E298F500FFBE04 /* UITableView.swift in Sources */,
 				1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */,
 				1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */,
 				1E44B7D129E29CFC00FFBE04 /* SectionViewModel.swift in Sources */,
-				1E1D9B9A29E81DA400E46603 /* JSONDecoderManager.swift in Sources */,
 				1E44B7B729E2926700FFBE04 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +654,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E44B79329E28E3F00FFBE04 /* DayBookTests.swift in Sources */,
+				1EFF86DB29EC095B00C1C224 /* MainViewProtocolSpy.swift in Sources */,
+				1EFF86DD29EC1D3500C1C224 /* MainTests.swift in Sources */,
+				1EFF86E029EC5C6800C1C224 /* FailureJSONMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

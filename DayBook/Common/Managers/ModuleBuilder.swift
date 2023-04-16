@@ -6,14 +6,12 @@
 //
 
 protocol ModuleBuilderProtocol {
-    
     func buildNewTaskModule(delegate: NewTaskViewControllerDelegate) -> NewTaskViewController
     func buildTaskDetailModule(_ detailViewModel: DetailTaskViewModel) -> TaskDetailViewController
     func buildRootModule() -> MainViewController
 }
 
 final class ModuleBuilder {
-    
     private let calendarManager: CalendarManagerProtocol
     
     init() {
@@ -23,45 +21,37 @@ final class ModuleBuilder {
 
 extension ModuleBuilder: ModuleBuilderProtocol {
     func buildRootModule() -> MainViewController {
-        
         let viewController = MainViewController()
-        let jsonService = JSONDecoderManager()
-        let networkManager = NetworkManager(jsonService: jsonService)
-        let apiService = APIService(networkManager: networkManager)
-                
-        let presenter = MainPresenter(calendarManager: calendarManager, moduleBuilder: self, apiService: apiService)
-        
+        let jsonService = JSONService()
+        let presenter = MainPresenter(
+            calendarManager: calendarManager,
+            moduleBuilder: self,
+            jsonService: jsonService
+        )
         viewController.presenter = presenter
         presenter.viewController = viewController
-        
         return viewController
     }
     
     //добавялем делегат для создания новой таски
     func buildNewTaskModule(delegate: NewTaskViewControllerDelegate) -> NewTaskViewController {
-        
         let viewController = NewTaskViewController()
         let presenter = NewTaskPresenter()
-        
         viewController.delegate = delegate
         viewController.presenter = presenter
         presenter.viewController = viewController
-        
         return viewController
     }
     
     func buildTaskDetailModule(_ detailViewModel: DetailTaskViewModel) -> TaskDetailViewController {
-        
         let viewController = TaskDetailViewController()
         let calendarManager = CalendarManager()
         let presenter = TaskDetailPresenter(
             calendarManager: calendarManager,
             detailViewModel: detailViewModel
         )
-        
         viewController.presenter = presenter
         presenter.viewController = viewController
-        
         return viewController
     }
 }

@@ -8,7 +8,6 @@
 import RealmSwift
 
 final class RealmService {
-    
     var realm: Realm {
         do {
             let realm = try Realm(configuration: .defaultConfiguration)
@@ -20,7 +19,6 @@ final class RealmService {
 }
 
 extension RealmService {
-    
     func create<T: Object>(_ object: T, completion: @escaping (Result<Void, Error>) -> Void) {
         do {
             try realm.write {

@@ -7,8 +7,6 @@
 
 import Foundation
 import RealmSwift
-//TODO: - delete after
-import SwiftyJSON
 
 //MARK: - MainPresenterProtocol
 protocol MainPresenterProtocol {
@@ -18,37 +16,31 @@ protocol MainPresenterProtocol {
     func didTapCalendarCell(at index: Int)
     func didTapTaskCell(at index: Int)
     func didTapAddTaskButton()
+    func fetchTasksFromJSON()
 }
 
 //MARK: - MainPresenter
 final class MainPresenter {
-    weak var viewController: MainViewControllerProtocol?
-    //TODO: - delete after
-    let realm = try! Realm()
     
+    //MARK: - Variables
+    weak var viewController: MainViewControllerProtocol?
     private var currentDate = Date()
     private var daysArray: [Date?] = []
     private var tasks: [TaskModel] = []
-    
-    private var selectedDate = Date() {
-        didSet {
-            print(selectedDate)
-        }
-    }
-    
+    private var object: [TaskModel] = []
+    private var selectedDate = Date()
     private let realmService = RealmService()
     private let calendarManager: CalendarManagerProtocol
     private let moduleBuilder: ModuleBuilder
-    private let apiService: APIServiceProtocol
-    private let postService = PostService()
+    private let jsonService: JSONServiceProtocol
     
     init(calendarManager: CalendarManagerProtocol,
          moduleBuilder: ModuleBuilder,
-         apiService: APIServiceProtocol
+         jsonService: JSONServiceProtocol
     ) {
         self.calendarManager = calendarManager
         self.moduleBuilder = moduleBuilder
-        self.apiService = apiService
+        self.jsonService = jsonService
     }
 }
 
@@ -56,7 +48,6 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterProtocol {
     func viewDidLoad() {
         daysArray.removeAll()
-        
         addTasksFromJSONFile()
         
         let daysInMonth = calendarManager.daysInMonth(date: currentDate)
@@ -93,7 +84,6 @@ extension MainPresenter: MainPresenterProtocol {
         guard let date = daysArray[index] else {
             return
         }
-        
         selectedDate = date
         viewDidLoad()
     }
@@ -114,12 +104,24 @@ extension MainPresenter: MainPresenterProtocol {
         let newViewController = moduleBuilder.buildTaskDetailModule(detailViewModel)
         viewController?.routeToTaskDetailViewController(newViewController)
     }
+    
+    func fetchTasksFromJSON() {
+        jsonService.fetchTasksFromJSON { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.object = response
+                self.viewController?.successResponseFromJSON(response)
+            case .failure(let error):
+                self.viewController?.failureResponseFromJson(error)
+            }
+        }
+    }
 }
 
 //MARK: - NewTaskViewControllerDelegate impl
 extension MainPresenter: NewTaskViewControllerDelegate {
     func didSaveNewTask(with taskModel: TaskModel) {
-        
         tasks.append(taskModel)
         viewDidLoad()
     }
@@ -175,27 +177,28 @@ private extension MainPresenter {
         let realmTaskModel = Array(realmService.read(TaskModelRM.self))
         tasks = realmTaskModel.map { TaskModel(taskRealmModel: $0) }
     }
-
+    
     func addTasksFromJSONFile() {
-        let object = postService.fetchTasksFromJSON()
+        fetchTasksFromJSON()
         let objectsFromRealm = Array(realmService.read(TaskModelRM.self))
-        
         let realmObjects = object.map { TaskModelRM(taskModel: $0) }
-        
-           realmObjects.forEach { realmObject in
-               if objectsFromRealm.contains(where: {_ in realmObject.id == realmObject.id}) {
-                   print("just in base")
-               } else {
-                   realmService.create(realmObject) { result in
-                       switch result {
-                       case .success:
-                           print("Success created task")
-                       case .failure(let error):
-                           print("Cant create realm object (Task) \(error.localizedDescription)")
-                       }
-                   }
-               }
-           }
+        checkedTaskFromJSONFile(objectsFromRealm, realmObjects)
+    }
+    
+    func checkedTaskFromJSONFile(_ objectsFromRealm: [TaskModelRM], _ realmObjects: [TaskModelRM]) {
+        realmObjects.forEach { realmObject in
+            if objectsFromRealm.contains(where: {_ in realmObject.id == realmObject.id}) {
+            } else {
+                realmService.create(realmObject) { result in
+                    switch result {
+                    case .success:
+                        print("Success created task")
+                    case .failure(let error):
+                        print("Cant create realm object (Task) \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
     }
     
     func fetchDaysCalendarStructure(_ startingSpaces: Int, _ daysInMonth: Int, _ firstDayOfMonth: Date) {

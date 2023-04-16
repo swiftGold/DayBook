@@ -38,8 +38,6 @@ extension NewTaskPresenter: NewTaskPresenterProtocol {
                 switch result {
                 case .success:
                     print("Success created task")
-                    //TODO: - delete after
-    //                print(Array(self.realmService.read(TaskModelRM.self)))
                     self.viewController?.createNewTask(with: taskModel)
                 case .failure(let error):
                     print("Cant create realm object (Task) \(error.localizedDescription)")

@@ -6,7 +6,6 @@
 //
 
 import RealmSwift
-import Foundation
 
 class TaskRealmModel: Object {
     @objc dynamic var taskName: String = ""

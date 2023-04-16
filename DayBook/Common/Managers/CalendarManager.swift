@@ -66,16 +66,12 @@ extension CalendarManager: CalendarManagerProtocol {
     
     // номер первого дня в месяце (на основе года и месяца)
     func firstOfMonth(date: Date) -> Date? {
-        
         let components = calendar.dateComponents([.year, .month], from: date)
         let day = calendar.date(from: components)!
-
         dateFormatter.timeZone = TimeZone(secondsFromGMT: +3)
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
         let newDate = dateFormatter.string(from: day)
         let dateDate = dateFormatter.date(from: newDate)
-
         return dateDate
     }
     
@@ -94,9 +90,7 @@ extension CalendarManager: CalendarManagerProtocol {
         guard let date = date else {
             return ""
         }
-
         let component = calendar.component(.day, from: date)
-        
         return String(component)
     }
     
@@ -105,9 +99,7 @@ extension CalendarManager: CalendarManagerProtocol {
               let secondDate = secondDate else {
             return false
         }
-
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
         let firstDateString = dateFormatter.string(from: firstDate)
         let secondDateString = dateFormatter.string(from: secondDate)
         return firstDateString == secondDateString

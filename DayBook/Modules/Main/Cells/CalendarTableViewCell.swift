@@ -131,7 +131,6 @@ extension CalendarTableViewCell: UICollectionViewDataSource {
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension CalendarTableViewCell: UICollectionViewDelegateFlowLayout {
-    
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             
             return CGSize(
@@ -197,7 +196,6 @@ private extension CalendarTableViewCell {
             addTaskButton.heightAnchor.constraint(equalToConstant: 40),
             addTaskButton.widthAnchor.constraint(equalToConstant: 200),
 
-            //TODO: - сделать автонастройку высоты
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
