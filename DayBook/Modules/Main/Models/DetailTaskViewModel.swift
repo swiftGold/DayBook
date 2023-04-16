@@ -14,7 +14,11 @@ struct DetailTaskViewModel {
     let startTime: String
     let finishTime: String
     
-    init(title: String, description: String, startTime: String, finishTime: String) {
+    init(title: String,
+         description: String,
+         startTime: String,
+         finishTime: String
+    ) {
         self.title = title
         self.description = description
         self.startTime = startTime
