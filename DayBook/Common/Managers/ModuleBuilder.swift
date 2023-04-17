@@ -5,8 +5,10 @@
 //  Created by Сергей Золотухин on 09.04.2023.
 //
 
+import Foundation
+
 protocol ModuleBuilderProtocol {
-    func buildNewTaskModule(delegate: NewTaskViewControllerDelegate) -> NewTaskViewController
+    func buildNewTaskModule(delegate: NewTaskViewControllerDelegate, _ selectedDate: Date) -> NewTaskViewController
     func buildTaskDetailModule(_ detailViewModel: DetailTaskViewModel) -> TaskDetailViewController
     func buildRootModule() -> MainViewController
 }
@@ -34,12 +36,14 @@ extension ModuleBuilder: ModuleBuilderProtocol {
     }
     
     //добавялем делегат для создания новой таски
-    func buildNewTaskModule(delegate: NewTaskViewControllerDelegate) -> NewTaskViewController {
+    func buildNewTaskModule(delegate: NewTaskViewControllerDelegate, _ selectedDate: Date) -> NewTaskViewController {
         let viewController = NewTaskViewController()
-        let presenter = NewTaskPresenter()
+        let calendarManager = CalendarManager()
+        let presenter = NewTaskPresenter(calendarManager: calendarManager)
         viewController.delegate = delegate
         viewController.presenter = presenter
         presenter.viewController = viewController
+        viewController.presenter?.updateSelectedDate(date: selectedDate)
         return viewController
     }
     

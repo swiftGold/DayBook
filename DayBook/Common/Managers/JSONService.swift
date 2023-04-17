@@ -10,6 +10,7 @@ import SwiftyJSON
 
 protocol JSONServiceProtocol {
     func fetchTasksFromJSON(completion: @escaping (Result<[TaskModel], Error>) -> Void)
+    func encode(with model: [TaskModel]) -> String
 }
 
 final class JSONService {
@@ -26,6 +27,13 @@ extension JSONService: JSONServiceProtocol {
         let json = JSON(jsonFromFile)
         let jsonString = encodeFromJson(with: json)
         decode(with: jsonString, completion: completion)
+    }
+    
+    func encode(with model: [TaskModel]) -> String {
+        let jsonEncoder = JSONEncoder()
+        guard let jsonData = try? jsonEncoder.encode(model) else { fatalError() }
+        guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else { fatalError() }
+        return json
     }
 }
 
@@ -53,13 +61,6 @@ private extension JSONService {
             print(error.localizedDescription)
         }
         return nil
-    }
-    
-    func encode(with model: [TaskModel]) -> String {
-        let jsonEncoder = JSONEncoder()
-        guard let jsonData = try? jsonEncoder.encode(model) else { fatalError() }
-        guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else { fatalError() }
-        return json
     }
     
     func encodeFromJson(with model: JSON) -> String {

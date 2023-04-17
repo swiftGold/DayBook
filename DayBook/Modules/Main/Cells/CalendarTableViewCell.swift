@@ -135,7 +135,7 @@ extension CalendarTableViewCell: UICollectionViewDelegateFlowLayout {
             
             return CGSize(
                 width: (UIScreen.main.bounds.width - 20) / 7,
-                height: 25
+                height: 35
             )
         }
 }
@@ -189,7 +189,7 @@ private extension CalendarTableViewCell {
             collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            collectionView.heightAnchor.constraint(equalToConstant: 160),
+            collectionView.heightAnchor.constraint(equalToConstant: 210),
             
             addTaskButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             addTaskButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),

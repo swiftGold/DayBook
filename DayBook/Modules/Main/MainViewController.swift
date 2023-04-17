@@ -10,7 +10,7 @@ import UIKit
 //MARK: - MainViewControllerProtocol
 protocol MainViewControllerProtocol: AnyObject {
     func updateTableView(with model: [SectionViewModel])
-    func routeToNewTaskViewController(_ viewController: UIViewController)
+    func routeToNewTaskViewController(_ viewController: UIViewController) 
     func routeToTaskDetailViewController(_ viewController: UIViewController)
     func successResponseFromJSON(_ response: [TaskModel])
     func failureResponseFromJson(_ error: Error)
@@ -40,13 +40,9 @@ final class MainViewController: UIViewController {
 
 //MARK: MainViewControllerProtocol impl
 extension MainViewController: MainViewControllerProtocol {
-    func failureResponseFromJson(_ error: Error) {
-        print(error)
-    }
+    func failureResponseFromJson(_ error: Error) {}
     
-    func successResponseFromJSON(_ response: [TaskModel]) {
-
-    }
+    func successResponseFromJSON(_ response: [TaskModel]) {}
     
     func updateTableView(with model: [SectionViewModel]) {
         sectionsViewModel = model

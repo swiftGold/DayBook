@@ -17,6 +17,8 @@ protocol NewTaskViewControllerDelegate: AnyObject {
 protocol NewTaskViewControllerProtocol: AnyObject {
     func createNewTask(with model: TaskModel)
     func dateError()
+    func changeSecondTimePickerValue(with date: Date)
+    func updateSelectedDate(_ date: Date)
 }
 
 //MARK: - NewTaskViewController
@@ -45,6 +47,7 @@ final class NewTaskViewController: UIViewController {
     private lazy var startDatePicker = make(UIDatePicker()) {
         $0.datePickerMode = .dateAndTime
         $0.tintColor = .black
+        $0.addTarget(self, action: #selector(didChangeDatePickerValue), for: .valueChanged)
         $0.locale = Locale(identifier: "en_GB")
     }
     
@@ -119,6 +122,12 @@ final class NewTaskViewController: UIViewController {
                                        finishDate: finishDate
         )
     }
+    
+    @objc
+    private func didChangeDatePickerValue() {
+        let startDate = startDatePicker.date
+        presenter?.didChangeDatePickerValue(date: startDate)
+    }
 }
 
 //MARK: - NewTaskViewControllerProtocol
@@ -131,6 +140,15 @@ extension NewTaskViewController: NewTaskViewControllerProtocol {
     func dateError() {
         finishDateLabel.text = "Finish date should to be more then start date"
         finishDateLabel.textColor = UIColor(named: "customRed")
+    }
+    
+    func changeSecondTimePickerValue(with date: Date) {
+        finishDatePicker.date = date
+    }
+    
+    func updateSelectedDate(_ date: Date) {
+        startDatePicker.date = date
+        finishDatePicker.date = date
     }
 }
 

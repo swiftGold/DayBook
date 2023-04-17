@@ -10,12 +10,18 @@ import RealmSwift
 
 protocol NewTaskPresenterProtocol {
     func addTaskButtonTapped(title: String, description: String, startDate: Date, finishDate: Date)
+    func didChangeDatePickerValue(date: Date)
+    func updateSelectedDate(date: Date)
 }
 
 final class NewTaskPresenter {
     weak var viewController: NewTaskViewControllerProtocol?
     
     private let realmService = RealmService()
+    private let calendarManager: CalendarManagerProtocol
+    init(calendarManager: CalendarManagerProtocol) {
+        self.calendarManager = calendarManager
+    }
 }
 
 extension NewTaskPresenter: NewTaskPresenterProtocol {
@@ -44,5 +50,14 @@ extension NewTaskPresenter: NewTaskPresenterProtocol {
                 }
             }
         }
+    }
+    
+    func didChangeDatePickerValue(date: Date) {
+        let date = calendarManager.plus30minutes(date: date)
+        viewController?.changeSecondTimePickerValue(with: date)
+    }
+    
+    func updateSelectedDate(date: Date) {
+        viewController?.updateSelectedDate(date)
     }
 }
