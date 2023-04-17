@@ -5,8 +5,8 @@ target 'DayBook' do
   use_frameworks!
 
   # Pods for DayBook
-	pod 'RealmSwift', '~>10'
-	pod 'SwiftyJSON', '~> 4.0'
+	pod 'RealmSwift'
+	pod 'SwiftyJSON'
 
   target 'DayBookTests' do
     inherit! :search_paths
