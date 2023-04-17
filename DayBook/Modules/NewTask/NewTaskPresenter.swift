@@ -17,10 +17,13 @@ protocol NewTaskPresenterProtocol {
 final class NewTaskPresenter {
     weak var viewController: NewTaskViewControllerProtocol?
     
-    private let realmService = RealmService()
+    private let realmService: RealmServiceProtocol
     private let calendarManager: CalendarManagerProtocol
-    init(calendarManager: CalendarManagerProtocol) {
+    init(calendarManager: CalendarManagerProtocol,
+         realmService: RealmServiceProtocol
+    ) {
         self.calendarManager = calendarManager
+        self.realmService = realmService
     }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 
 final class TaskTableViewCell: UITableViewCell {
     
-    //MARK: - UI
+// MARK: - UI
     private let timeBracketLabel = make(UILabel()) {
         $0.textColor = UIColor(named: "customRed")
     }
@@ -23,10 +23,10 @@ final class TaskTableViewCell: UITableViewCell {
         $0.textColor = UIColor(named: "customPurple")
     }
     
-    //MARK: - Properties
+// MARK: - Properties
     private var viewModel: TaskViewModel?
     private let calendarManager = CalendarManager()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -38,7 +38,6 @@ final class TaskTableViewCell: UITableViewCell {
     
     func configureCell(with model: TaskViewModel) {
         viewModel = model
-    
         timeBracketLabel.text = viewModel?.timeBracket
         guard let date = viewModel?.datetime else { return }
         let time = calendarManager.timeFromFullDate(date: date)
@@ -57,7 +56,6 @@ private extension TaskTableViewCell {
     func addSubviews() {
         selectionStyle = .none
         backgroundColor = .clear
-        
         myAddSubView(timeBracketLabel)
         myAddSubView(titleLabel)
         myAddSubView(datetimeLabel)

@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-//MARK: - MainPresenterProtocol
+// MARK: - MainPresenterProtocol
 protocol MainPresenterProtocol {
     func viewDidLoad()
     func didTapPreviousMonthButton()
@@ -19,43 +19,42 @@ protocol MainPresenterProtocol {
     func fetchTasksFromJSON()
 }
 
-//MARK: - MainPresenter
+// MARK: - MainPresenter
 final class MainPresenter {
-    
-    //MARK: - Variables
+    // MARK: - Variables
     weak var viewController: MainViewControllerProtocol?
     private var currentDate = Date()
     private var daysArray: [Date?] = []
     private var tasks: [TaskModel] = []
     private var object: [TaskModel] = []
     private var selectedDate = Date()
-    private let realmService = RealmService()
+    private let realmService: RealmServiceProtocol
     private let calendarManager: CalendarManagerProtocol
     private let moduleBuilder: ModuleBuilder
     private let jsonService: JSONServiceProtocol
     
     init(calendarManager: CalendarManagerProtocol,
          moduleBuilder: ModuleBuilder,
-         jsonService: JSONServiceProtocol
+         jsonService: JSONServiceProtocol,
+         realmService: RealmServiceProtocol
     ) {
         self.calendarManager = calendarManager
         self.moduleBuilder = moduleBuilder
         self.jsonService = jsonService
+        self.realmService = realmService
     }
 }
 
-//MARK: - MainPresenterProtocol impl
+// MARK: - MainPresenterProtocol impl
 extension MainPresenter: MainPresenterProtocol {
     func viewDidLoad() {
         daysArray.removeAll()
         addTasksFromJSONFile()
-        
         let daysInMonth = calendarManager.daysInMonth(date: currentDate)
         guard let firstDayOfMonth = calendarManager.firstOfMonth(date: currentDate) else { return }
         let startingSpaces = calendarManager.weekDay(date: firstDayOfMonth)
         fetchDaysCalendarStructure(startingSpaces, daysInMonth, firstDayOfMonth)
         fetchAllTasksForAllDays()
-        
         let calendarViewModel = fetchCalendarViewModel()
         let taskViewModel = fetchTaskViewModel()
         let sectionViewModel: [SectionViewModel] = [
@@ -66,7 +65,6 @@ extension MainPresenter: MainPresenterProtocol {
                              rows: taskViewModel
                             )
         ]
-        
         viewController?.updateTableView(with: sectionViewModel)
     }
     
@@ -98,9 +96,7 @@ extension MainPresenter: MainPresenterProtocol {
         let model = filteredArray[index]
         let start = calendarManager.timeFromFullDate(date: model.dateStart)
         let finish = calendarManager.timeFromFullDate(date: model.dateFinish)
-        
         let detailViewModel = DetailTaskViewModel(title: model.title, description: model.description, startTime: start, finishTime: finish)
-        
         let newViewController = moduleBuilder.buildTaskDetailModule(detailViewModel)
         viewController?.routeToTaskDetailViewController(newViewController)
     }
@@ -119,7 +115,7 @@ extension MainPresenter: MainPresenterProtocol {
     }
 }
 
-//MARK: - NewTaskViewControllerDelegate impl
+// MARK: - NewTaskViewControllerDelegate impl
 extension MainPresenter: NewTaskViewControllerDelegate {
     func didSaveNewTask(with taskModel: TaskModel) {
         tasks.append(taskModel)
@@ -127,13 +123,12 @@ extension MainPresenter: NewTaskViewControllerDelegate {
     }
 }
 
-//MARK: - Private methods
+// MARK: - Private methods
 private extension MainPresenter {
     func fetchCalendarViewModel() -> CalendarViewModel {
         let days = daysArray.map { day -> DayViewModel in
             let isSelected = calendarManager.isDatesEqual(firstDate: selectedDate, secondDate: day)
             let isTasked = calendarManager.isTasked(models: tasks, date: day)
-            print(isTasked)
             return DayViewModel(
                 title: calendarManager.dayNumberFromFullDate(date: day),
                 isSelected: isSelected,
@@ -147,7 +142,6 @@ private extension MainPresenter {
     
     func fetchTaskViewModel() -> [Row] {
         let filteredArray = fetchFilteredTasks()
-        
         let tasksViewModel = filteredArray.map { taskModel -> Row in
             let timeHour = calendarManager.hourFromFullDate(date: taskModel.dateStart)
             let timeBracket = fetchTimeBracket(with: timeHour)
@@ -209,9 +203,8 @@ private extension MainPresenter {
     
     func fetchDaysCalendarStructure(_ startingSpaces: Int, _ daysInMonth: Int, _ firstDayOfMonth: Date) {
         var count: Int = 1
-        
-        while(count <= 42) {
-            if(count <= startingSpaces || count - startingSpaces > daysInMonth) {
+        while count <= 42 {
+            if count <= startingSpaces || count - startingSpaces > daysInMonth {
                 daysArray.append(nil)
             } else {
                 let value = count - startingSpaces
@@ -229,4 +222,3 @@ private extension MainPresenter {
         return title
     }
 }
-

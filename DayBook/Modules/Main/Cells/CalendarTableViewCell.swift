@@ -7,7 +7,7 @@
 
 import UIKit
 
-//MARK: - CalendarTableViewCellDelegate
+// MARK: - CalendarTableViewCellDelegate
 protocol CalendarTableViewCellDelegate: AnyObject {
     func didTapPreviousMonthButton()
     func didTapNextMonthButton()
@@ -15,10 +15,9 @@ protocol CalendarTableViewCellDelegate: AnyObject {
     func didTapAddTaskButton()
 }
 
-//MARK: - CalendarTableViewCell
+// MARK: - CalendarTableViewCell
 final class CalendarTableViewCell: UITableViewCell {
-    
-//MARK: - UI
+// MARK: - UI
     private lazy var previousMonthButton = make(UIButton(type: .system)) {
         let image = UIImage(named: "arrow.backward.circle")
         $0.addTarget(self, action: #selector(didTapPreviourMonthButton), for: .touchUpInside)
@@ -90,7 +89,7 @@ final class CalendarTableViewCell: UITableViewCell {
         collectionView.reloadData()
     }
     
-//MARK: - Objc methods
+// MARK: - Objc methods
     @objc
     private func didTapPreviourMonthButton() {
         delegate?.didTapPreviousMonthButton()
@@ -107,10 +106,10 @@ final class CalendarTableViewCell: UITableViewCell {
     }
 }
 
-//MARK: - UICollectionViewDelegate impl
+// MARK: - UICollectionViewDelegate impl
 extension CalendarTableViewCell: UICollectionViewDelegate {}
 
-//MARK: - UICollectionViewDataSource impl
+// MARK: - UICollectionViewDataSource impl
 extension CalendarTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.days.count ?? 0
@@ -129,18 +128,18 @@ extension CalendarTableViewCell: UICollectionViewDataSource {
     }
 }
 
-//MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension CalendarTableViewCell: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            
-            return CGSize(
-                width: (UIScreen.main.bounds.width - 20) / 7,
-                height: 35
-            )
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(
+            width: (UIScreen.main.bounds.width - 20) / 7,
+            height: 35
+        )
+    }
 }
 
-//MARK: - private methods
+// MARK: - private methods
 private extension CalendarTableViewCell {
     func setupStackView() {
         daysOfWeek.forEach {
@@ -162,7 +161,6 @@ private extension CalendarTableViewCell {
     
     func addSubviews() {
         selectionStyle = .none
-        
         contentView.myAddSubView(previousMonthButton)
         contentView.myAddSubView(titleLabel)
         contentView.myAddSubView(nextMonthButton)
@@ -195,7 +193,7 @@ private extension CalendarTableViewCell {
             addTaskButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             addTaskButton.heightAnchor.constraint(equalToConstant: 40),
             addTaskButton.widthAnchor.constraint(equalToConstant: 200),
-
+            
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),

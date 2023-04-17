@@ -7,13 +7,13 @@
 
 import UIKit
 
-//MARK: - TaskDetailViewControllerProtocol
+// MARK: - TaskDetailViewControllerProtocol
 protocol TaskDetailViewControllerProtocol: AnyObject {
     func updateUI(with detailViewModel: DetailTaskViewModel)
 }
 
 final class TaskDetailViewController: UIViewController {
-    //MARK: - UI
+// MARK: - UI
     private let titleLabel = make(UILabel()) {
         $0.numberOfLines = 0
         $0.text = "title"
@@ -72,17 +72,17 @@ final class TaskDetailViewController: UIViewController {
         $0.distribution = .fill
     }
     
-    //MARK: - Properties
+// MARK: - Properties
     var presenter: TaskDetailPresenterProtocol?
     
-    //MARK: - Life cycles
+// MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
     }
 }
 
-//MARK: - TaskDetailViewControllerProtocol
+// MARK: - TaskDetailViewControllerProtocol
 extension TaskDetailViewController: TaskDetailViewControllerProtocol {
     func updateUI(with detailViewModel: DetailTaskViewModel) {
         titleLabel.text = detailViewModel.title
@@ -92,13 +92,12 @@ extension TaskDetailViewController: TaskDetailViewControllerProtocol {
     }
 }
 
-//MARK: - Private methods
+// MARK: - Private methods
 private extension TaskDetailViewController {
     func setupViewController() {
         view.backgroundColor = UIColor(named: "customBackground")
         addSubviews()
         setConstraints()
-        
         presenter?.viewDidLoad()
     }
     
@@ -106,11 +105,9 @@ private extension TaskDetailViewController {
         timeStackView.addArrangedSubview(startTimeLabel)
         timeStackView.addArrangedSubview(dashLabel)
         timeStackView.addArrangedSubview(finishTimeLabel)
-        
         mainStackView.addArrangedSubview(titleLabel)
         mainStackView.addArrangedSubview(timeStackView)
         mainStackView.addArrangedSubview(descriptionLabel)
-        
         view.myAddSubView(mainStackView)
     }
     

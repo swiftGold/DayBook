@@ -12,18 +12,18 @@ class TaskRealmModel: Object {
     @objc dynamic var taskDateStart: Date = Date()
     @objc dynamic var taskDateFinish: Date = Date()
     @objc dynamic var taskValue: String = ""
-
+    
     convenience init(
-            taskName: String,
-            taskDateStart: Date,
-            taskDateFinish: Date,
-            taskValue: String
+        taskName: String,
+        taskDateStart: Date,
+        taskDateFinish: Date,
+        taskValue: String
     )
-        {
-            self.init()
-            self.taskName = taskName
-            self.taskDateStart = taskDateStart
-            self.taskDateFinish = taskDateFinish
-            self.taskValue = taskValue
-        }
+    {
+        self.init()
+        self.taskName = taskName
+        self.taskDateStart = taskDateStart
+        self.taskDateFinish = taskDateFinish
+        self.taskValue = taskValue
+    }
 }

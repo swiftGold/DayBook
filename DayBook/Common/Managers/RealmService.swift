@@ -7,6 +7,11 @@
 
 import RealmSwift
 
+protocol RealmServiceProtocol {
+    func create<T: Object>(_ object: T, completion: @escaping (Result<Void, Error>) -> Void)
+    func read<T: Object>(_ object: T.Type) -> Results<T>
+}
+
 final class RealmService {
     var realm: Realm {
         do {
@@ -18,7 +23,7 @@ final class RealmService {
     }
 }
 
-extension RealmService {
+extension RealmService: RealmServiceProtocol {
     func create<T: Object>(_ object: T, completion: @escaping (Result<Void, Error>) -> Void) {
         do {
             try realm.write {
@@ -33,7 +38,7 @@ extension RealmService {
     func read<T: Object>(_ object: T.Type) -> Results<T> {
         return realm.objects(T.self)
     }
-
+    
     func update <T: Object>(_ object: T, with dictionary: [String: Any?], completion: @escaping (Result<Void, Error>) -> Void) {
         
         do {
@@ -47,7 +52,7 @@ extension RealmService {
             completion(.failure(error))
         }
     }
-        
+    
     func delete<T: Object>(_ object: T, completion: @escaping (Result<Void, Error>) -> Void) {
         
         do {

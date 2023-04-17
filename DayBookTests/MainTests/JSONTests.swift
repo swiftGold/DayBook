@@ -1,5 +1,5 @@
 //
-//  MainTests.swift
+//  JSONTests.swift
 //  DayBookTests
 //
 //  Created by Сергей Золотухин on 16.04.2023.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import DayBook
 
-final class MainTests: XCTestCase {
+final class JSONTests: XCTestCase {
     
     var sut: MainPresenter!
     var spyViewController: MainViewProtocolSpy!
