@@ -1,12 +1,16 @@
 # DayBook
 1. An application that is a calendar with a diary
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-17 at 16 57 21](https://user-images.githubusercontent.com/112863601/232506535-10c09df7-9580-4ed7-a744-fbebefdca624.png)
+
+![Screenshot 2023-04-17 at 17 17 59](https://user-images.githubusercontent.com/112863601/232513299-273e0fc1-2515-429a-9337-d2701781d2f5.png)
+
 
 2. You can add new tasks, with short title, description, start and finish dates
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-17 at 16 58 19](https://user-images.githubusercontent.com/112863601/232506929-b1a31226-fa08-4a0c-a309-4a2a60d34d0c.png)
+
+![Screenshot 2023-04-17 at 17 19 08](https://user-images.githubusercontent.com/112863601/232513780-74cf2309-89b1-4e57-b0da-13dd66ebb49f.png)
 
 3. You can see task's details
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-17 at 16 58 33](https://user-images.githubusercontent.com/112863601/232507305-d7312c68-3ede-43c5-b6a3-882a9fa87655.png)
+
+![Screenshot 2023-04-17 at 17 19 31](https://user-images.githubusercontent.com/112863601/232513958-ca5ea432-b25f-44f6-849b-82838ccf6e46.png)
 
 4.Tasks are stored in JSON-file in application
 
