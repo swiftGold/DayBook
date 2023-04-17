@@ -89,7 +89,7 @@ extension MainPresenter: MainPresenterProtocol {
     }
     
     func didTapAddTaskButton() {
-        let newViewController = moduleBuilder.buildNewTaskModule(delegate: self)
+        let newViewController = moduleBuilder.buildNewTaskModule(delegate: self, selectedDate)
         viewController?.routeToNewTaskViewController(newViewController)
     }
     
@@ -132,7 +132,13 @@ private extension MainPresenter {
     func fetchCalendarViewModel() -> CalendarViewModel {
         let days = daysArray.map { day -> DayViewModel in
             let isSelected = calendarManager.isDatesEqual(firstDate: selectedDate, secondDate: day)
-            return DayViewModel(title: calendarManager.dayNumberFromFullDate(date: day), isSelected: isSelected)
+            let isTasked = calendarManager.isTasked(models: tasks, date: day)
+            print(isTasked)
+            return DayViewModel(
+                title: calendarManager.dayNumberFromFullDate(date: day),
+                isSelected: isSelected,
+                isTasked: isTasked
+            )
         }
         let title = fetchMonthYearTitle()
         let calendarViewModel = CalendarViewModel(title: title, days: days)

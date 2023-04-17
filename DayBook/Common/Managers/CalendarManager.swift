@@ -18,10 +18,12 @@ protocol CalendarManagerProtocol {
     func weekDay(date: Date) -> Int
     func dayNumberFromFullDate(date: Date?) -> String
     func isDatesEqual(firstDate: Date?, secondDate: Date?) -> Bool
+    func isTasked(models: [TaskModel], date: Date?) -> Bool
     func timeFromFullDate(date: Date) -> String
     func hourFromFullDate(date: Date) -> String
     func saveDateInTimeStamp(date: Date) -> TimeInterval
     func fetchDateFromTimeStamp(ti: TimeInterval) -> String
+    func plus30minutes(date: Date) -> Date
 }
 
 final class CalendarManager {
@@ -94,6 +96,7 @@ extension CalendarManager: CalendarManagerProtocol {
         return String(component)
     }
     
+    //проверка на одинаковость выбранной даты и даты из календаря, с целью отобразить задачи определенного дня
     func isDatesEqual(firstDate: Date?, secondDate: Date?) -> Bool {
         guard let firstDate = firstDate,
               let secondDate = secondDate else {
@@ -105,10 +108,27 @@ extension CalendarManager: CalendarManagerProtocol {
         return firstDateString == secondDateString
     }
     
+    //Проверка на наличие задачи в определенный день
+    func isTasked(models: [TaskModel], date: Date?) -> Bool {
+        var isTasked = false
+        
+        let dayArray = models.map { taskModel in
+            dateFromFullDate(date: taskModel.dateStart)
+        }
+        
+        let day = dateFromFullDate(date: date)
+        
+        dayArray.forEach { elem in
+            if elem == day {
+                isTasked = true
+            }
+        }
+        return isTasked
+    }
+    
     //Строковое значение времени дня из полной даты с учетом таймзоны
     func timeFromFullDate(date: Date) -> String {
         dateFormatter.dateFormat = "H:mm"
-//        dateFormatter.timeZone = .current
         return dateFormatter.string(from: date)
     }
     
@@ -117,6 +137,17 @@ extension CalendarManager: CalendarManagerProtocol {
         dateFormatter.dateFormat = "H"
         dateFormatter.timeZone = .current
         return dateFormatter.string(from: date)
+    }
+    
+    //Строковое значение часа из полной даты с учетом таймзоны
+    func dateFromFullDate(date: Date?) -> String {
+        var hour = ""
+        if let date = date {
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.timeZone = .current
+            hour = dateFormatter.string(from: date)
+        }
+        return hour
     }
     
     //Сохраняем дату в формате TimeStamp
@@ -132,5 +163,10 @@ extension CalendarManager: CalendarManagerProtocol {
         dateFormatter.timeZone = .current
         let dateString = dateFormatter.string(from: dateFromUnix)
         return dateString
+    }
+    
+    //Добавляем +30 минут для второго datePicker
+    func plus30minutes(date: Date) -> Date {
+        return calendar.date(byAdding: .minute, value: 30, to: date)!
     }
 }

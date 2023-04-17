@@ -13,4 +13,5 @@ struct CalendarViewModel {
 struct DayViewModel {
     let title: String
     let isSelected: Bool
+    let isTasked: Bool
 }
