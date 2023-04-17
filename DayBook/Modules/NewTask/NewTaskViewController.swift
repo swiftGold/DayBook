@@ -8,12 +8,12 @@
 import UIKit
 import RealmSwift
 
-//MARK: - NewTaskViewControllerDelegate
+// MARK: - NewTaskViewControllerDelegate
 protocol NewTaskViewControllerDelegate: AnyObject {
     func didSaveNewTask(with taskModel: TaskModel)
 }
 
-//MARK: - NewTaskViewControllerProtocol
+// MARK: - NewTaskViewControllerProtocol
 protocol NewTaskViewControllerProtocol: AnyObject {
     func createNewTask(with model: TaskModel)
     func dateError()
@@ -21,9 +21,9 @@ protocol NewTaskViewControllerProtocol: AnyObject {
     func updateSelectedDate(_ date: Date)
 }
 
-//MARK: - NewTaskViewController
+// MARK: - NewTaskViewController
 final class NewTaskViewController: UIViewController {
-    //MARK: - UI
+// MARK: - UI
     private let taskNameLabel = make(UILabel()) {
         $0.textColor = .black
         $0.text = "Enter task name"
@@ -94,17 +94,17 @@ final class NewTaskViewController: UIViewController {
         $0.distribution = .fill
     }
     
-    //MARK: - Properties
+// MARK: - Properties
     var presenter: NewTaskPresenterProtocol?
     weak var delegate: NewTaskViewControllerDelegate?
     
-    //MARK: - Life cycles
+// MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
     }
     
-    //MARK: - Objc methods
+// MARK: - Objc methods
     @objc
     private func didTapAddTaskButton() {
         guard let title = taskNameTextField.text,
@@ -115,7 +115,6 @@ final class NewTaskViewController: UIViewController {
         }
         let startDate = startDatePicker.date
         let finishDate = finishDatePicker.date
-        
         presenter?.addTaskButtonTapped(title: title,
                                        description: description,
                                        startDate: startDate,
@@ -130,7 +129,7 @@ final class NewTaskViewController: UIViewController {
     }
 }
 
-//MARK: - NewTaskViewControllerProtocol
+// MARK: - NewTaskViewControllerProtocol
 extension NewTaskViewController: NewTaskViewControllerProtocol {
     func createNewTask(with model: TaskModel) {
         delegate?.didSaveNewTask(with: model)
@@ -152,7 +151,7 @@ extension NewTaskViewController: NewTaskViewControllerProtocol {
     }
 }
 
-//MARK: - Private methods
+// MARK: - Private methods
 private extension NewTaskViewController {
     func setupViewController() {
         view.backgroundColor = .lightGray
@@ -162,7 +161,6 @@ private extension NewTaskViewController {
     
     func addSubviews() {
         view.backgroundColor = UIColor(named: "customBackground")
-        
         stackView.addArrangedSubview(taskNameLabel)
         stackView.addArrangedSubview(taskNameTextField)
         stackView.addArrangedSubview(startDateLabel)
@@ -172,7 +170,6 @@ private extension NewTaskViewController {
         stackView.addArrangedSubview(descriptionLabel)
         stackView.addArrangedSubview(descriptionTextView)
         stackView.addArrangedSubview(addTaskButton)
-        
         view.myAddSubView(stackView)
     }
     

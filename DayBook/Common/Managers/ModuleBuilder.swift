@@ -25,10 +25,12 @@ extension ModuleBuilder: ModuleBuilderProtocol {
     func buildRootModule() -> MainViewController {
         let viewController = MainViewController()
         let jsonService = JSONService()
+        let realmService = RealmService()
         let presenter = MainPresenter(
             calendarManager: calendarManager,
             moduleBuilder: self,
-            jsonService: jsonService
+            jsonService: jsonService,
+            realmService: realmService
         )
         viewController.presenter = presenter
         presenter.viewController = viewController
@@ -39,7 +41,11 @@ extension ModuleBuilder: ModuleBuilderProtocol {
     func buildNewTaskModule(delegate: NewTaskViewControllerDelegate, _ selectedDate: Date) -> NewTaskViewController {
         let viewController = NewTaskViewController()
         let calendarManager = CalendarManager()
-        let presenter = NewTaskPresenter(calendarManager: calendarManager)
+        let realmService = RealmService()
+        let presenter = NewTaskPresenter(
+            calendarManager: calendarManager,
+            realmService: realmService
+        )
         viewController.delegate = delegate
         viewController.presenter = presenter
         presenter.viewController = viewController

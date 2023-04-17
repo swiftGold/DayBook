@@ -13,7 +13,7 @@ final class TaskModelRM: Object {
     @objc dynamic var descrip: String = ""
     @objc dynamic var dateStart: Date = Date()
     @objc dynamic var dateFinish: Date = Date()
-        
+    
     convenience init(taskModel: TaskModel) {
         self.init()
         id = taskModel.id

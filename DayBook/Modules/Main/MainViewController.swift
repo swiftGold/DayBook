@@ -7,7 +7,7 @@
 
 import UIKit
 
-//MARK: - MainViewControllerProtocol
+// MARK: - MainViewControllerProtocol
 protocol MainViewControllerProtocol: AnyObject {
     func updateTableView(with model: [SectionViewModel])
     func routeToNewTaskViewController(_ viewController: UIViewController) 
@@ -21,7 +21,7 @@ final class MainViewController: UIViewController {
     var presenter: MainPresenterProtocol?
     private var sectionsViewModel: [SectionViewModel] = []
     
-    //MARK: - UI
+// MARK: - UI
     private lazy var tableView = make(UITableView()) {
         $0.delegate = self
         $0.dataSource = self
@@ -31,14 +31,14 @@ final class MainViewController: UIViewController {
         $0.backgroundColor = .clear
     }
     
-    //MARK: - Life Cycles
+// MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
     }
 }
 
-//MARK: MainViewControllerProtocol impl
+// MARK: MainViewControllerProtocol impl
 extension MainViewController: MainViewControllerProtocol {
     func failureResponseFromJson(_ error: Error) {}
     
@@ -58,14 +58,14 @@ extension MainViewController: MainViewControllerProtocol {
     }
 }
 
-//MARK: - UITableViewDelegate impl
+// MARK: - UITableViewDelegate impl
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didTapTaskCell(at: indexPath.item)
     }
 }
 
-//MARK: - UITableViewDataSource impl
+// MARK: - UITableViewDataSource impl
 extension MainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionsViewModel.count
@@ -79,9 +79,7 @@ extension MainViewController: UITableViewDataSource {
         let row = indexPath.row
         let section = indexPath.section
         let rowType = sectionsViewModel[section].rows[row]
-        
         switch rowType {
-            
         case .calendar(viewModel: let viewModel):
             let cell = tableView.dequeueReusableCell(withType: CalendarTableViewCell.self, for: indexPath)
             cell.delegate = self
@@ -113,7 +111,7 @@ extension MainViewController: CalendarTableViewCellDelegate {
     }
 }
 
-//MARK: - private methods
+// MARK: - private methods
 private extension MainViewController {
     func setupViewController() {
         view.backgroundColor = UIColor(named: "customBackground")

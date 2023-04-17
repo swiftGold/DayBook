@@ -48,7 +48,7 @@ private extension JSONService {
             return completion(.failure(myError))
         }
     }
-
+    
     func getJsonFromFile() -> JSON? {
         guard let path = Bundle.main.path(forResource: "JSONModel", ofType: "json") else { fatalError() }
         let url = URL(fileURLWithPath: path)
