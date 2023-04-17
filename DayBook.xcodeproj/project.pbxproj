@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012854D449A86E5623150227 /* Pods_DayBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F44BD7CC4C697DD2BFC537 /* Pods_DayBookTests.framework */; };
+		1E12B39629E550A2007404AB /* DetailTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */; };
+		1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39729E550F3007404AB /* TaskModelRM.swift */; };
+		1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39929E55168007404AB /* TaskViewModel.swift */; };
+		1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39B29E551D1007404AB /* TaskRealmModel.swift */; };
+		1E1D9B9D29E8254A00E46603 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9C29E8254A00E46603 /* JSONService.swift */; };
+		1E425D7429E997C800F329D1 /* JSONModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E425D7329E997C800F329D1 /* JSONModel.json */; };
 		1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */; };
 		1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */; };
 		1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */; };
 		1E44B78529E28E3F00FFBE04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E44B78429E28E3F00FFBE04 /* Assets.xcassets */; };
 		1E44B78829E28E3F00FFBE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E44B78629E28E3F00FFBE04 /* LaunchScreen.storyboard */; };
-		1E44B79329E28E3F00FFBE04 /* DayBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */; };
 		1E44B79D29E28E3F00FFBE04 /* DayBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */; };
 		1E44B79F29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */; };
 		1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7B129E28F8200FFBE04 /* MainPresenter.swift */; };
@@ -22,6 +28,25 @@
 		1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7BA29E2930100FFBE04 /* NewTaskPresenter.swift */; };
 		1E44B7BD29E2930E00FFBE04 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7BC29E2930E00FFBE04 /* TaskDetailViewController.swift */; };
 		1E44B7BF29E2931D00FFBE04 /* TaskDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7BE29E2931D00FFBE04 /* TaskDetailPresenter.swift */; };
+		1E44B7C429E298F500FFBE04 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7C129E298F500FFBE04 /* UIView.swift */; };
+		1E44B7C529E298F500FFBE04 /* UiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7C229E298F500FFBE04 /* UiTableViewCell.swift */; };
+		1E44B7C629E298F500FFBE04 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7C329E298F500FFBE04 /* UITableView.swift */; };
+		1E44B7CB29E2993A00FFBE04 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7CA29E2993A00FFBE04 /* Helpers.swift */; };
+		1E44B7D129E29CFC00FFBE04 /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D029E29CFC00FFBE04 /* SectionViewModel.swift */; };
+		1E44B7D329E29D1C00FFBE04 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D229E29D1C00FFBE04 /* SectionType.swift */; };
+		1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D429E29D3100FFBE04 /* Row.swift */; };
+		1E44B7D729E29D4900FFBE04 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */; };
+		1E44B7D929E29D5300FFBE04 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D829E29D5300FFBE04 /* TaskModel.swift */; };
+		1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */; };
+		1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */; };
+		1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */; };
+		1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E129E3317C00FFBE04 /* Double.swift */; };
+		1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E329E3F90B00FFBE04 /* RealmService.swift */; };
+		1EFF86DB29EC095B00C1C224 /* MainViewProtocolSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */; };
+		1EFF86DD29EC1D3500C1C224 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DC29EC1D3500C1C224 /* JSONTests.swift */; };
+		1EFF86E029EC5C6800C1C224 /* FailureJSONMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DF29EC5C6800C1C224 /* FailureJSONMock.swift */; };
+		B51338957152F9351133FE0F /* Pods_DayBook_DayBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F886F57DA6293BD0633607 /* Pods_DayBook_DayBookUITests.framework */; };
+		D4D729133C0F8D21066072CB /* Pods_DayBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6565AE75A0E5108B990F7E /* Pods_DayBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +67,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13F886F57DA6293BD0633607 /* Pods_DayBook_DayBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayBook_DayBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewModel.swift; sourceTree = "<group>"; };
+		1E12B39729E550F3007404AB /* TaskModelRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRM.swift; sourceTree = "<group>"; };
+		1E12B39929E55168007404AB /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		1E12B39B29E551D1007404AB /* TaskRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealmModel.swift; sourceTree = "<group>"; };
+		1E1D9B9C29E8254A00E46603 /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
+		1E425D7329E997C800F329D1 /* JSONModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONModel.json; sourceTree = "<group>"; };
 		1E44B77829E28E3E00FFBE04 /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E44B77D29E28E3E00FFBE04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +82,6 @@
 		1E44B78729E28E3F00FFBE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E44B78929E28E3F00FFBE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E44B78E29E28E3F00FFBE04 /* DayBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookTests.swift; sourceTree = "<group>"; };
 		1E44B79829E28E3F00FFBE04 /* DayBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44B79C29E28E3F00FFBE04 /* DayBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookUITests.swift; sourceTree = "<group>"; };
 		1E44B79E29E28E3F00FFBE04 /* DayBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -61,6 +92,31 @@
 		1E44B7BA29E2930100FFBE04 /* NewTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskPresenter.swift; sourceTree = "<group>"; };
 		1E44B7BC29E2930E00FFBE04 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		1E44B7BE29E2931D00FFBE04 /* TaskDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPresenter.swift; sourceTree = "<group>"; };
+		1E44B7C129E298F500FFBE04 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1E44B7C229E298F500FFBE04 /* UiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiTableViewCell.swift; sourceTree = "<group>"; };
+		1E44B7C329E298F500FFBE04 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		1E44B7CA29E2993A00FFBE04 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		1E44B7D029E29CFC00FFBE04 /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
+		1E44B7D229E29D1C00FFBE04 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		1E44B7D429E29D3100FFBE04 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		1E44B7D829E29D5300FFBE04 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
+		1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		1E44B7E129E3317C00FFBE04 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		1E44B7E329E3F90B00FFBE04 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocolSpy.swift; sourceTree = "<group>"; };
+		1EFF86DC29EC1D3500C1C224 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
+		1EFF86DF29EC5C6800C1C224 /* FailureJSONMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureJSONMock.swift; sourceTree = "<group>"; };
+		5B3B84A8D1D4F9EC35BF7177 /* Pods-DayBook-DayBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook-DayBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7CA9FCB768553225A589B98D /* Pods-DayBook-DayBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook-DayBookUITests.release.xcconfig"; path = "Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D6565AE75A0E5108B990F7E /* Pods_DayBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF696131699B20FCB71A2F2 /* Pods-DayBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBookTests.release.xcconfig"; path = "Target Support Files/Pods-DayBookTests/Pods-DayBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4966FB90B36BA082BC129C7 /* Pods-DayBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook.debug.xcconfig"; path = "Target Support Files/Pods-DayBook/Pods-DayBook.debug.xcconfig"; sourceTree = "<group>"; };
+		C754D07F6F4DAB18D700C065 /* Pods-DayBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBookTests.debug.xcconfig"; path = "Target Support Files/Pods-DayBookTests/Pods-DayBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3F44BD7CC4C697DD2BFC537 /* Pods_DayBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4768945B17F13208883910 /* Pods-DayBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook.release.xcconfig"; path = "Target Support Files/Pods-DayBook/Pods-DayBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D729133C0F8D21066072CB /* Pods_DayBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012854D449A86E5623150227 /* Pods_DayBookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +140,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51338957152F9351133FE0F /* Pods_DayBook_DayBookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1501817DC2279C116E1C04B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4966FB90B36BA082BC129C7 /* Pods-DayBook.debug.xcconfig */,
+				EE4768945B17F13208883910 /* Pods-DayBook.release.xcconfig */,
+				5B3B84A8D1D4F9EC35BF7177 /* Pods-DayBook-DayBookUITests.debug.xcconfig */,
+				7CA9FCB768553225A589B98D /* Pods-DayBook-DayBookUITests.release.xcconfig */,
+				C754D07F6F4DAB18D700C065 /* Pods-DayBookTests.debug.xcconfig */,
+				8DF696131699B20FCB71A2F2 /* Pods-DayBookTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1E44B76F29E28E3E00FFBE04 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +167,8 @@
 				1E44B79129E28E3F00FFBE04 /* DayBookTests */,
 				1E44B79B29E28E3F00FFBE04 /* DayBookUITests */,
 				1E44B77929E28E3E00FFBE04 /* Products */,
+				1501817DC2279C116E1C04B7 /* Pods */,
+				6D625B4BF28F22718A382226 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				1E44B7AC29E28F1600FFBE04 /* Modules */,
-				1E44B7B329E2921600FFBE04 /* Managers */,
+				1E44B7CC29E2995D00FFBE04 /* Common */,
 				1E44B7AB29E28ED700FFBE04 /* Applications */,
 			);
 			path = DayBook;
@@ -121,7 +195,9 @@
 		1E44B79129E28E3F00FFBE04 /* DayBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E44B79229E28E3F00FFBE04 /* DayBookTests.swift */,
+				1EFF86DE29EC5C5300C1C224 /* Mock */,
+				1EFF86D129EC07FE00C1C224 /* Spy */,
+				1EA1FF9B29EBCDFC00F4A060 /* MainTests */,
 			);
 			path = DayBookTests;
 			sourceTree = "<group>";
@@ -162,6 +238,9 @@
 			children = (
 				1E44B77F29E28E3E00FFBE04 /* MainViewController.swift */,
 				1E44B7B129E28F8200FFBE04 /* MainPresenter.swift */,
+				1E44B7CD29E29B3C00FFBE04 /* Models */,
+				1E44B7CF29E29B5900FFBE04 /* Entities */,
+				1E44B7CE29E29B4900FFBE04 /* Cells */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -189,8 +268,115 @@
 			children = (
 				1E44B7B429E2922800FFBE04 /* CalendarManager.swift */,
 				1E44B7B629E2926700FFBE04 /* ModuleBuilder.swift */,
+				1E44B7E329E3F90B00FFBE04 /* RealmService.swift */,
+				1E1D9B9C29E8254A00E46603 /* JSONService.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		1E44B7C029E2989E00FFBE04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7C329E298F500FFBE04 /* UITableView.swift */,
+				1E44B7C229E298F500FFBE04 /* UiTableViewCell.swift */,
+				1E44B7C129E298F500FFBE04 /* UIView.swift */,
+				1E44B7E129E3317C00FFBE04 /* Double.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1E44B7C929E2992900FFBE04 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7CA29E2993A00FFBE04 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1E44B7CC29E2995D00FFBE04 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7B329E2921600FFBE04 /* Managers */,
+				1E44B7C029E2989E00FFBE04 /* Extensions */,
+				1E44B7C929E2992900FFBE04 /* Helpers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1E44B7CD29E29B3C00FFBE04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7D029E29CFC00FFBE04 /* SectionViewModel.swift */,
+				1E44B7D629E29D4900FFBE04 /* CalendarViewModel.swift */,
+				1E12B39929E55168007404AB /* TaskViewModel.swift */,
+				1E12B39529E550A2007404AB /* DetailTaskViewModel.swift */,
+				1E12B39729E550F3007404AB /* TaskModelRM.swift */,
+				1E44B7D829E29D5300FFBE04 /* TaskModel.swift */,
+				1E12B39B29E551D1007404AB /* TaskRealmModel.swift */,
+				1E425D7329E997C800F329D1 /* JSONModel.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E44B7CE29E29B4900FFBE04 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7DC29E2B20700FFBE04 /* subCells */,
+				1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */,
+				1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1E44B7CF29E29B5900FFBE04 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7D229E29D1C00FFBE04 /* SectionType.swift */,
+				1E44B7D429E29D3100FFBE04 /* Row.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1E44B7DC29E2B20700FFBE04 /* subCells */ = {
+			isa = PBXGroup;
+			children = (
+				1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */,
+			);
+			path = subCells;
+			sourceTree = "<group>";
+		};
+		1EA1FF9B29EBCDFC00F4A060 /* MainTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EFF86DC29EC1D3500C1C224 /* JSONTests.swift */,
+			);
+			path = MainTests;
+			sourceTree = "<group>";
+		};
+		1EFF86D129EC07FE00C1C224 /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		1EFF86DE29EC5C5300C1C224 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1EFF86DF29EC5C6800C1C224 /* FailureJSONMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		6D625B4BF28F22718A382226 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D6565AE75A0E5108B990F7E /* Pods_DayBook.framework */,
+				13F886F57DA6293BD0633607 /* Pods_DayBook_DayBookUITests.framework */,
+				D3F44BD7CC4C697DD2BFC537 /* Pods_DayBookTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +386,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E44B7A229E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBook" */;
 			buildPhases = (
+				FA3B36436572D51CB17DE112 /* [CP] Check Pods Manifest.lock */,
 				1E44B77429E28E3E00FFBE04 /* Sources */,
 				1E44B77529E28E3E00FFBE04 /* Frameworks */,
 				1E44B77629E28E3E00FFBE04 /* Resources */,
+				7D91A13DE3885722EA22B862 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +405,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E44B7A529E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBookTests" */;
 			buildPhases = (
+				12F3980C5182311CD80D25AF /* [CP] Check Pods Manifest.lock */,
 				1E44B78A29E28E3F00FFBE04 /* Sources */,
 				1E44B78B29E28E3F00FFBE04 /* Frameworks */,
 				1E44B78C29E28E3F00FFBE04 /* Resources */,
@@ -235,9 +424,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E44B7A829E28E3F00FFBE04 /* Build configuration list for PBXNativeTarget "DayBookUITests" */;
 			buildPhases = (
+				4174BEC0B2224AEA03F67A5D /* [CP] Check Pods Manifest.lock */,
 				1E44B79429E28E3F00FFBE04 /* Sources */,
 				1E44B79529E28E3F00FFBE04 /* Frameworks */,
 				1E44B79629E28E3F00FFBE04 /* Resources */,
+				BA5794E59F5BF2BCEBD05A43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E44B78829E28E3F00FFBE04 /* LaunchScreen.storyboard in Resources */,
+				1E425D7429E997C800F329D1 /* JSONModel.json in Resources */,
 				1E44B78529E28E3F00FFBE04 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,20 +510,142 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12F3980C5182311CD80D25AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayBookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4174BEC0B2224AEA03F67A5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayBook-DayBookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D91A13DE3885722EA22B862 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayBook/Pods-DayBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayBook/Pods-DayBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayBook/Pods-DayBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA5794E59F5BF2BCEBD05A43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayBook-DayBookUITests/Pods-DayBook-DayBookUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA3B36436572D51CB17DE112 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E44B77429E28E3E00FFBE04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1E44B7BD29E2930E00FFBE04 /* TaskDetailViewController.swift in Sources */,
+				1E44B7CB29E2993A00FFBE04 /* Helpers.swift in Sources */,
+				1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */,
+				1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */,
+				1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */,
 				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
+				1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */,
+				1E44B7D329E29D1C00FFBE04 /* SectionType.swift in Sources */,
+				1E44B7C429E298F500FFBE04 /* UIView.swift in Sources */,
+				1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */,
+				1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */,
+				1E44B7D729E29D4900FFBE04 /* CalendarViewModel.swift in Sources */,
 				1E44B7B929E292F800FFBE04 /* NewTaskViewController.swift in Sources */,
 				1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */,
+				1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */,
+				1E44B7C529E298F500FFBE04 /* UiTableViewCell.swift in Sources */,
+				1E12B39629E550A2007404AB /* DetailTaskViewModel.swift in Sources */,
 				1E44B77E29E28E3E00FFBE04 /* SceneDelegate.swift in Sources */,
+				1E44B7D929E29D5300FFBE04 /* TaskModel.swift in Sources */,
 				1E44B7B229E28F8200FFBE04 /* MainPresenter.swift in Sources */,
 				1E44B7BF29E2931D00FFBE04 /* TaskDetailPresenter.swift in Sources */,
+				1E1D9B9D29E8254A00E46603 /* JSONService.swift in Sources */,
+				1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */,
 				1E44B7B529E2922800FFBE04 /* CalendarManager.swift in Sources */,
+				1E44B7C629E298F500FFBE04 /* UITableView.swift in Sources */,
 				1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */,
+				1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */,
+				1E44B7D129E29CFC00FFBE04 /* SectionViewModel.swift in Sources */,
 				1E44B7B729E2926700FFBE04 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +654,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E44B79329E28E3F00FFBE04 /* DayBookTests.swift in Sources */,
+				1EFF86DB29EC095B00C1C224 /* MainViewProtocolSpy.swift in Sources */,
+				1EFF86DD29EC1D3500C1C224 /* JSONTests.swift in Sources */,
+				1EFF86E029EC5C6800C1C224 /* FailureJSONMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +812,7 @@
 		};
 		1E44B7A329E28E3F00FFBE04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4966FB90B36BA082BC129C7 /* Pods-DayBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,6 +840,7 @@
 		};
 		1E44B7A429E28E3F00FFBE04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE4768945B17F13208883910 /* Pods-DayBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -550,6 +868,7 @@
 		};
 		1E44B7A629E28E3F00FFBE04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C754D07F6F4DAB18D700C065 /* Pods-DayBookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +889,7 @@
 		};
 		1E44B7A729E28E3F00FFBE04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DF696131699B20FCB71A2F2 /* Pods-DayBookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -590,6 +910,7 @@
 		};
 		1E44B7A929E28E3F00FFBE04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3B84A8D1D4F9EC35BF7177 /* Pods-DayBook-DayBookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -608,6 +929,7 @@
 		};
 		1E44B7AA29E28E3F00FFBE04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CA9FCB768553225A589B98D /* Pods-DayBook-DayBookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
