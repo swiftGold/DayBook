@@ -23,7 +23,7 @@ final class TaskTableViewCell: UITableViewCell {
         $0.textColor = UIColor(named: "customPurple")
     }
     
-// MARK: - Properties
+// MARK: - Variables
     private var viewModel: TaskViewModel?
     private let calendarManager = CalendarManager()
     

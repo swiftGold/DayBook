@@ -93,12 +93,14 @@ extension MainPresenter: MainPresenterProtocol {
     
     func didTapTaskCell(at index: Int) {
         let filteredArray = fetchFilteredTasks()
-        let model = filteredArray[index]
-        let start = calendarManager.timeFromFullDate(date: model.dateStart)
-        let finish = calendarManager.timeFromFullDate(date: model.dateFinish)
-        let detailViewModel = DetailTaskViewModel(title: model.title, description: model.description, startTime: start, finishTime: finish)
-        let newViewController = moduleBuilder.buildTaskDetailModule(detailViewModel)
-        viewController?.routeToTaskDetailViewController(newViewController)
+        if !filteredArray.isEmpty {
+            let model = filteredArray[index]
+            let start = calendarManager.timeFromFullDate(date: model.dateStart)
+            let finish = calendarManager.timeFromFullDate(date: model.dateFinish)
+            let detailViewModel = DetailTaskViewModel(title: model.title, description: model.description, startTime: start, finishTime: finish)
+            let newViewController = moduleBuilder.buildTaskDetailModule(detailViewModel)
+            viewController?.routeToTaskDetailViewController(newViewController)
+        }
     }
     
     func fetchTasksFromJSON() {
