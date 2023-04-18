@@ -7,6 +7,6 @@
 
 enum Row {
     case calendar(viewModel: CalendarViewModel)
-    case task(viewModel: TaskViewModel)
+    case task(viewModel: [TaskViewModel])
 }
 

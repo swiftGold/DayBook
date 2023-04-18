@@ -2,79 +2,84 @@
 //  TaskTableViewCell.swift
 //  DayBook
 //
-//  Created by Сергей Золотухин on 09.04.2023.
+//  Created by Сергей Золотухин on 18.04.2023.
 //
 
 import UIKit
 
+protocol TaskTableViewCellDelegate: AnyObject {
+    func didTapTaskCell(at index: Int)
+}
+
 final class TaskTableViewCell: UITableViewCell {
     
-// MARK: - UI
-    private let timeBracketLabel = make(UILabel()) {
-        $0.textColor = UIColor(named: "customRed")
+    private lazy var tableView = make(UITableView()) {
+        $0.delegate = self
+        $0.dataSource = self
+        $0.register(TaskViewCell.self)
+        $0.backgroundColor = .clear
     }
     
-    private let titleLabel = make(UILabel()) {
-        $0.numberOfLines = 0
-        $0.textColor = UIColor(named: "customPurple")
-    }
-    
-    private let datetimeLabel = make(UILabel()) {
-        $0.textColor = UIColor(named: "customPurple")
-    }
-    
-// MARK: - Variables
-    private var viewModel: TaskViewModel?
-    private let calendarManager = CalendarManager()
+    weak var delegate: TaskTableViewCellDelegate?
+    private var taskViewModels: [TaskViewModel] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupCell()
+        setupTableViewCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(with model: TaskViewModel) {
-        viewModel = model
-        timeBracketLabel.text = viewModel?.timeBracket
-        guard let date = viewModel?.datetime else { return }
-        let time = calendarManager.timeFromFullDate(date: date)
-        datetimeLabel.text = time
-        titleLabel.text = viewModel?.title
+    func configureCell(with viewModels: [TaskViewModel]) {
+        taskViewModels = viewModels
+        tableView.reloadData()
     }
 }
 
-// MARK: - Private methods
+extension TaskTableViewCell: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("table did tap at CELL \(indexPath.item)")
+        let index = indexPath.row
+        delegate?.didTapTaskCell(at: index)
+    }
+}
+
+extension TaskTableViewCell: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        taskViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withType: TaskViewCell.self, for: indexPath)
+        let model = taskViewModels[indexPath.row]
+        cell.configureCell(with: model)
+        return cell
+    }
+}
+
+// MARK: - private methods
 private extension TaskTableViewCell {
-    func setupCell() {
+    func setupTableViewCell() {
         addSubviews()
-        setupConstraints()
+        setConstraints()
+        selectionStyle = .none
+        backgroundColor = .clear
     }
     
     func addSubviews() {
-        selectionStyle = .none
-        backgroundColor = .clear
-        myAddSubView(timeBracketLabel)
-        myAddSubView(titleLabel)
-        myAddSubView(datetimeLabel)
+        contentView.myAddSubView(tableView)
     }
     
-    func setupConstraints() {
+    func setConstraints() {
         NSLayoutConstraint.activate([
-            timeBracketLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            timeBracketLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            timeBracketLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-            timeBracketLabel.widthAnchor.constraint(equalToConstant: 120),
-            
-            titleLabel.leadingAnchor.constraint(equalTo: timeBracketLabel.trailingAnchor, constant: 20),
-            titleLabel.centerYAnchor.constraint(equalTo: timeBracketLabel.centerYAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: datetimeLabel.leadingAnchor, constant: -8),
-            
-            datetimeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            datetimeLabel.widthAnchor.constraint(equalToConstant: 50),
-            datetimeLabel.centerYAnchor.constraint(equalTo: timeBracketLabel.centerYAnchor)
+            tableView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            tableView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 }
+

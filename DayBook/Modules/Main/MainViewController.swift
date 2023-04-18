@@ -10,7 +10,7 @@ import UIKit
 // MARK: - MainViewControllerProtocol
 protocol MainViewControllerProtocol: AnyObject {
     func updateTableView(with model: [SectionViewModel])
-    func routeToNewTaskViewController(_ viewController: UIViewController) 
+    func routeToNewTaskViewController(_ viewController: UIViewController)
     func routeToTaskDetailViewController(_ viewController: UIViewController)
     func successResponseFromJSON(_ response: [TaskModel])
     func failureResponseFromJson(_ error: Error)
@@ -21,7 +21,7 @@ final class MainViewController: UIViewController {
     var presenter: MainPresenterProtocol?
     private var sectionsViewModel: [SectionViewModel] = []
     
-// MARK: - UI
+    // MARK: - UI
     private lazy var tableView = make(UITableView()) {
         $0.delegate = self
         $0.dataSource = self
@@ -29,9 +29,10 @@ final class MainViewController: UIViewController {
                     TaskTableViewCell.self
         )
         $0.backgroundColor = .clear
+        $0.separatorStyle = .none
     }
     
-// MARK: - Life Cycles
+    // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
@@ -59,12 +60,7 @@ extension MainViewController: MainViewControllerProtocol {
 }
 
 // MARK: - UITableViewDelegate impl
-extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didTapTaskCell(at: indexPath.row)
-        print(indexPath.item)
-    }
-}
+extension MainViewController: UITableViewDelegate {}
 
 // MARK: - UITableViewDataSource impl
 extension MainViewController: UITableViewDataSource {
@@ -88,12 +84,22 @@ extension MainViewController: UITableViewDataSource {
             return cell
         case .task(viewModel: let viewModel):
             let cell = tableView.dequeueReusableCell(withType: TaskTableViewCell.self, for: indexPath)
-            cell.configureCell(with: viewModel)
+            let taskViewModels = viewModel
+            cell.configureCell(with: taskViewModels)
+            cell.delegate = self
             return cell
         }
     }
 }
 
+// MARK: - TaskTableViewCellDelegate
+extension MainViewController: TaskTableViewCellDelegate {
+    func didTapTaskCell(at index: Int) {
+        presenter?.didTapTaskCell(at: index)
+    }
+}
+
+// MARK: - CalendarTableViewCellDelegate
 extension MainViewController: CalendarTableViewCellDelegate {
     func didTapCell(at index: Int) {
         presenter?.didTapCalendarCell(at: index)
@@ -134,4 +140,3 @@ private extension MainViewController {
         ])
     }
 }
-
