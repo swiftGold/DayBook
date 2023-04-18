@@ -17,7 +17,7 @@ protocol CalendarTableViewCellDelegate: AnyObject {
 
 // MARK: - CalendarTableViewCell
 final class CalendarTableViewCell: UITableViewCell {
-// MARK: - UI
+    // MARK: - UI
     private lazy var previousMonthButton = make(UIButton(type: .system)) {
         let image = UIImage(named: "arrow.backward.circle")
         $0.addTarget(self, action: #selector(didTapPreviourMonthButton), for: .touchUpInside)
@@ -46,6 +46,7 @@ final class CalendarTableViewCell: UITableViewCell {
     private lazy var layout = make(UICollectionViewFlowLayout()) {
         $0.minimumLineSpacing = 0
         $0.minimumInteritemSpacing = 0
+        $0.minimumLineSpacing = 0
         $0.scrollDirection = .vertical
     }
     
@@ -89,7 +90,7 @@ final class CalendarTableViewCell: UITableViewCell {
         collectionView.reloadData()
     }
     
-// MARK: - Objc methods
+    // MARK: - Objc methods
     @objc
     private func didTapPreviourMonthButton() {
         delegate?.didTapPreviousMonthButton()
@@ -155,12 +156,12 @@ private extension CalendarTableViewCell {
     
     func setupCell() {
         backgroundColor = .clear
+        selectionStyle = .none
         addSubviews()
         setConstraints()
     }
     
     func addSubviews() {
-        selectionStyle = .none
         contentView.myAddSubView(previousMonthButton)
         contentView.myAddSubView(titleLabel)
         contentView.myAddSubView(nextMonthButton)
@@ -173,32 +174,27 @@ private extension CalendarTableViewCell {
         NSLayoutConstraint.activate([
             previousMonthButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             previousMonthButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            
+
             titleLabel.centerYAnchor.constraint(equalTo: previousMonthButton.centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            
+
             nextMonthButton.centerYAnchor.constraint(equalTo: previousMonthButton.centerYAnchor),
             nextMonthButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            
+
             stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            
+
             collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             collectionView.heightAnchor.constraint(equalToConstant: 210),
-            
+
             addTaskButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             addTaskButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             addTaskButton.heightAnchor.constraint(equalToConstant: 40),
             addTaskButton.widthAnchor.constraint(equalToConstant: 200),
-            
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: addTaskButton.bottomAnchor, constant: 20)
+            addTaskButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 }
-

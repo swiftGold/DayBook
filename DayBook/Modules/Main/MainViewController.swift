@@ -61,7 +61,8 @@ extension MainViewController: MainViewControllerProtocol {
 // MARK: - UITableViewDelegate impl
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didTapTaskCell(at: indexPath.item)
+        presenter?.didTapTaskCell(at: indexPath.row)
+        print(indexPath.item)
     }
 }
 
@@ -117,7 +118,6 @@ private extension MainViewController {
         view.backgroundColor = UIColor(named: "customBackground")
         addSubviews()
         setConstraints()
-        
         presenter?.viewDidLoad()
     }
     

@@ -23,7 +23,7 @@ protocol NewTaskViewControllerProtocol: AnyObject {
 
 // MARK: - NewTaskViewController
 final class NewTaskViewController: UIViewController {
-// MARK: - UI
+    // MARK: - UI
     private let taskNameLabel = make(UILabel()) {
         $0.textColor = .black
         $0.text = "Enter task name"
@@ -94,17 +94,18 @@ final class NewTaskViewController: UIViewController {
         $0.distribution = .fill
     }
     
-// MARK: - Properties
+    // MARK: - Properties
     var presenter: NewTaskPresenterProtocol?
     weak var delegate: NewTaskViewControllerDelegate?
     
-// MARK: - Life cycles
+    // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
+        addTaps()
     }
     
-// MARK: - Objc methods
+    // MARK: - Objc methods
     @objc
     private func didTapAddTaskButton() {
         guard let title = taskNameTextField.text,
@@ -126,6 +127,11 @@ final class NewTaskViewController: UIViewController {
     private func didChangeDatePickerValue() {
         let startDate = startDatePicker.date
         presenter?.didChangeDatePickerValue(date: startDate)
+    }
+    
+    @objc
+    private func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -153,6 +159,12 @@ extension NewTaskViewController: NewTaskViewControllerProtocol {
 
 // MARK: - Private methods
 private extension NewTaskViewController {
+    private func addTaps() {
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapScreen)
+    }
+    
     func setupViewController() {
         view.backgroundColor = .lightGray
         addSubviews()
