@@ -62,9 +62,11 @@ extension MainPresenter: MainPresenterProtocol {
                              rows: [.calendar(viewModel: calendarViewModel)]
                             ),
             SectionViewModel(type: .task,
-                             rows: taskViewModel
+                             rows: [.task(viewModel: taskViewModel)]
                             )
         ]
+        
+        
         viewController?.updateTableView(with: sectionViewModel)
     }
     
@@ -142,19 +144,20 @@ private extension MainPresenter {
         return calendarViewModel
     }
     
-    func fetchTaskViewModel() -> [Row] {
+    func fetchTaskViewModel() -> [TaskViewModel] {
         let filteredArray = fetchFilteredTasks()
-        let tasksViewModel = filteredArray.map { taskModel -> Row in
-            let timeHour = calendarManager.hourFromFullDate(date: taskModel.dateStart)
+        var tasksViewModels: [TaskViewModel] = []
+        
+        tasksViewModels = filteredArray.map {
+            let timeHour = calendarManager.hourFromFullDate(date: $0.dateStart)
             let timeBracket = fetchTimeBracket(with: timeHour)
-            let taskViewModel = TaskViewModel(title: taskModel.title,
-                                              datetime: taskModel.dateStart,
-                                              timeBracket: timeBracket
+            return TaskViewModel(
+                title: $0.title,
+                datetime: $0.dateStart,
+                timeBracket: timeBracket
             )
-            let item = Row.task(viewModel: taskViewModel)
-            return item
         }
-        return tasksViewModel
+        return tasksViewModels
     }
     
     func fetchTimeBracket(with hourString: String) -> String {

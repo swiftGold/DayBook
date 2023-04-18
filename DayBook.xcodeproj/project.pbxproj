@@ -12,6 +12,7 @@
 		1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39729E550F3007404AB /* TaskModelRM.swift */; };
 		1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39929E55168007404AB /* TaskViewModel.swift */; };
 		1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39B29E551D1007404AB /* TaskRealmModel.swift */; };
+		1E14CD5F29EEA67500B0F6D6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14CD5E29EEA67500B0F6D6 /* TaskTableViewCell.swift */; };
 		1E1D9B9D29E8254A00E46603 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9C29E8254A00E46603 /* JSONService.swift */; };
 		1E425D7429E997C800F329D1 /* JSONModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E425D7329E997C800F329D1 /* JSONModel.json */; };
 		1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */; };
@@ -39,7 +40,7 @@
 		1E44B7D929E29D5300FFBE04 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7D829E29D5300FFBE04 /* TaskModel.swift */; };
 		1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */; };
 		1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */; };
-		1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */; };
+		1E44B7E029E2D0A600FFBE04 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7DF29E2D0A600FFBE04 /* TaskViewCell.swift */; };
 		1E44B7E229E3317C00FFBE04 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E129E3317C00FFBE04 /* Double.swift */; };
 		1E44B7E429E3F90B00FFBE04 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B7E329E3F90B00FFBE04 /* RealmService.swift */; };
 		1EFF86DB29EC095B00C1C224 /* MainViewProtocolSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */; };
@@ -72,6 +73,7 @@
 		1E12B39729E550F3007404AB /* TaskModelRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRM.swift; sourceTree = "<group>"; };
 		1E12B39929E55168007404AB /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		1E12B39B29E551D1007404AB /* TaskRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealmModel.swift; sourceTree = "<group>"; };
+		1E14CD5E29EEA67500B0F6D6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		1E1D9B9C29E8254A00E46603 /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		1E425D7329E997C800F329D1 /* JSONModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONModel.json; sourceTree = "<group>"; };
 		1E44B77829E28E3E00FFBE04 /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +105,7 @@
 		1E44B7D829E29D5300FFBE04 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
-		1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		1E44B7DF29E2D0A600FFBE04 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		1E44B7E129E3317C00FFBE04 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1E44B7E329E3F90B00FFBE04 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		1EFF86DA29EC095B00C1C224 /* MainViewProtocolSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocolSpy.swift; sourceTree = "<group>"; };
@@ -323,7 +325,7 @@
 			children = (
 				1E44B7DC29E2B20700FFBE04 /* subCells */,
 				1E44B7DA29E2A49200FFBE04 /* CalendarTableViewCell.swift */,
-				1E44B7DF29E2D0A600FFBE04 /* TaskTableViewCell.swift */,
+				1E14CD5E29EEA67500B0F6D6 /* TaskTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				1E44B7DD29E2B21900FFBE04 /* CalendarViewCell.swift */,
+				1E44B7DF29E2D0A600FFBE04 /* TaskViewCell.swift */,
 			);
 			path = subCells;
 			sourceTree = "<group>";
@@ -620,7 +623,8 @@
 			files = (
 				1E44B7BD29E2930E00FFBE04 /* TaskDetailViewController.swift in Sources */,
 				1E44B7CB29E2993A00FFBE04 /* Helpers.swift in Sources */,
-				1E44B7E029E2D0A600FFBE04 /* TaskTableViewCell.swift in Sources */,
+				1E14CD5F29EEA67500B0F6D6 /* TaskTableViewCell.swift in Sources */,
+				1E44B7E029E2D0A600FFBE04 /* TaskViewCell.swift in Sources */,
 				1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */,
 				1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */,
 				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
