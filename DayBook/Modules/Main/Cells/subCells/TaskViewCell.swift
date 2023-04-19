@@ -11,16 +11,16 @@ final class TaskViewCell: UITableViewCell {
     
 // MARK: - UI
     private let timeBracketLabel = make(UILabel()) {
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
     }
     
     private let titleLabel = make(UILabel()) {
         $0.numberOfLines = 0
-        $0.textColor = UIColor(named: "customPurple")
+        $0.textColor = UIColor(named: Colors.purple)
     }
     
     private let datetimeLabel = make(UILabel()) {
-        $0.textColor = UIColor(named: "customPurple")
+        $0.textColor = UIColor(named: Colors.purple)
     }
     
 // MARK: - Variables

@@ -121,7 +121,7 @@ extension MainViewController: CalendarTableViewCellDelegate {
 // MARK: - private methods
 private extension MainViewController {
     func setupViewController() {
-        view.backgroundColor = UIColor(named: "customBackground")
+        view.backgroundColor = UIColor(named: Colors.background)
         addSubviews()
         setConstraints()
         presenter?.viewDidLoad()
