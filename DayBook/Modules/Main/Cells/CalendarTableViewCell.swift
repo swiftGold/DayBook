@@ -19,24 +19,24 @@ protocol CalendarTableViewCellDelegate: AnyObject {
 final class CalendarTableViewCell: UITableViewCell {
     // MARK: - UI
     private lazy var previousMonthButton = make(UIButton(type: .system)) {
-        let image = UIImage(named: "arrow.backward.circle")
+        let image = UIImage(named: Images.arrowLeft)
         $0.addTarget(self, action: #selector(didTapPreviourMonthButton), for: .touchUpInside)
         $0.setImage(image, for: .normal)
-        $0.tintColor = UIColor(named: "customPurple")
+        $0.tintColor = UIColor(named: Colors.purple)
     }
     
     private let titleLabel = make(UILabel()) {
         $0.textAlignment = .center
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
         $0.text = "January/2023"
     }
     
     private lazy var nextMonthButton = make(UIButton(type: .system)) {
-        let image = UIImage(named: "arrow.right.circle")
+        let image = UIImage(named: Images.arrowRight)
         $0.addTarget(self, action: #selector(didTapNextMonthButton), for: .touchUpInside)
         $0.setImage(image, for: .normal)
-        $0.tintColor = UIColor(named: "customPurple")
+        $0.tintColor = UIColor(named: Colors.purple)
     }
     
     private lazy var stackView = make(UIStackView()) {
@@ -62,11 +62,11 @@ final class CalendarTableViewCell: UITableViewCell {
     private lazy var addTaskButton = make(UIButton(type: .system)) {
         $0.addTarget(self, action: #selector(didTapAddTaskButton), for: .touchUpInside)
         $0.setTitle("Add task", for: .normal)
-        $0.tintColor = UIColor(named: "customBackground")
+        $0.tintColor = UIColor(named: Colors.background)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        $0.backgroundColor = UIColor(named: "customPurple")
+        $0.backgroundColor = UIColor(named: Colors.purple)
         $0.layer.borderWidth = 1.4
-        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
+        $0.layer.borderColor = UIColor(named: Colors.purple)?.cgColor
         $0.layer.cornerRadius = 10
     }
     
@@ -146,7 +146,7 @@ private extension CalendarTableViewCell {
         daysOfWeek.forEach {
             let label = UILabel()
             label.textAlignment = .center
-            label.textColor = UIColor(named: "customGreen")
+            label.textColor = UIColor(named: Colors.green)
             label.text = $0
             label.font = UIFont.boldSystemFont(ofSize: 16)
             label.translatesAutoresizingMaskIntoConstraints = false

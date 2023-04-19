@@ -10,7 +10,7 @@ import UIKit
 final class CalendarViewCell: UICollectionViewCell {
     
     private let titleLabel = make(UILabel()) {
-        $0.textColor = UIColor(named: "customGreen")
+        $0.textColor = UIColor(named: Colors.green)
         $0.font = UIFont.boldSystemFont(ofSize: 18)
         $0.layer.borderWidth = 0.5
         $0.layer.cornerRadius = 10
@@ -32,8 +32,8 @@ final class CalendarViewCell: UICollectionViewCell {
     
     func configureCell(with viewModel: DayViewModel) {
         titleLabel.text = "\(viewModel.title)"
-        titleLabel.textColor = viewModel.isSelected ? UIColor(named: "customRed") : UIColor(named: "customPurple")
-        taskView.backgroundColor = viewModel.isTasked ? UIColor(named: "customRed") : .clear
+        titleLabel.textColor = viewModel.isSelected ? UIColor(named: Colors.red) : UIColor(named: Colors.purple)
+        taskView.backgroundColor = viewModel.isTasked ? UIColor(named: Colors.red) : .clear
     }
 }
 

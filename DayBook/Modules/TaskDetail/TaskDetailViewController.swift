@@ -19,10 +19,10 @@ final class TaskDetailViewController: UIViewController {
         $0.text = "title"
         $0.textAlignment = .center
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
         $0.layer.cornerRadius = 16
         $0.layer.borderWidth = 1.4
-        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
+        $0.layer.borderColor = UIColor(named: Colors.purple)?.cgColor
     }
     
     private let startTimeLabel = make(UILabel()) {
@@ -30,7 +30,7 @@ final class TaskDetailViewController: UIViewController {
         $0.textAlignment = .center
         $0.text = "start"
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
     }
     
     private let dashLabel = make(UILabel()) {
@@ -38,7 +38,7 @@ final class TaskDetailViewController: UIViewController {
         $0.numberOfLines = 0
         $0.textAlignment = .center
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
     }
     
     private let finishTimeLabel = make(UILabel()) {
@@ -46,7 +46,7 @@ final class TaskDetailViewController: UIViewController {
         $0.textAlignment = .center
         $0.text = "finish"
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
     }
     
     private let descriptionLabel = make(UILabel()) {
@@ -54,10 +54,10 @@ final class TaskDetailViewController: UIViewController {
         $0.text = "description"
         $0.textAlignment = .center
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        $0.textColor = UIColor(named: "customRed")
+        $0.textColor = UIColor(named: Colors.red)
         $0.layer.cornerRadius = 16
         $0.layer.borderWidth = 1.4
-        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
+        $0.layer.borderColor = UIColor(named: Colors.purple)?.cgColor
     }
     
     private let timeStackView = make(UIStackView()) {
@@ -95,7 +95,7 @@ extension TaskDetailViewController: TaskDetailViewControllerProtocol {
 // MARK: - Private methods
 private extension TaskDetailViewController {
     func setupViewController() {
-        view.backgroundColor = UIColor(named: "customBackground")
+        view.backgroundColor = UIColor(named: Colors.background)
         addSubviews()
         setConstraints()
         presenter?.viewDidLoad()
