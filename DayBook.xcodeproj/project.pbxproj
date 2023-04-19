@@ -13,6 +13,8 @@
 		1E12B39A29E55168007404AB /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39929E55168007404AB /* TaskViewModel.swift */; };
 		1E12B39C29E551D1007404AB /* TaskRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12B39B29E551D1007404AB /* TaskRealmModel.swift */; };
 		1E14CD5F29EEA67500B0F6D6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14CD5E29EEA67500B0F6D6 /* TaskTableViewCell.swift */; };
+		1E14CD6229EFF43800B0F6D6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14CD6129EFF43800B0F6D6 /* Colors.swift */; };
+		1E14CD6429EFF5C900B0F6D6 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14CD6329EFF5C900B0F6D6 /* Images.swift */; };
 		1E1D9B9D29E8254A00E46603 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D9B9C29E8254A00E46603 /* JSONService.swift */; };
 		1E425D7429E997C800F329D1 /* JSONModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E425D7329E997C800F329D1 /* JSONModel.json */; };
 		1E44B77C29E28E3E00FFBE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44B77B29E28E3E00FFBE04 /* AppDelegate.swift */; };
@@ -74,6 +76,8 @@
 		1E12B39929E55168007404AB /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		1E12B39B29E551D1007404AB /* TaskRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealmModel.swift; sourceTree = "<group>"; };
 		1E14CD5E29EEA67500B0F6D6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		1E14CD6129EFF43800B0F6D6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1E14CD6329EFF5C900B0F6D6 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		1E1D9B9C29E8254A00E46603 /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		1E425D7329E997C800F329D1 /* JSONModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONModel.json; sourceTree = "<group>"; };
 		1E44B77829E28E3E00FFBE04 /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,15 @@
 				8DF696131699B20FCB71A2F2 /* Pods-DayBookTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1E14CD6029EFF41B00B0F6D6 /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+				1E14CD6129EFF43800B0F6D6 /* Colors.swift */,
+				1E14CD6329EFF5C900B0F6D6 /* Images.swift */,
+			);
+			path = Variables;
 			sourceTree = "<group>";
 		};
 		1E44B76F29E28E3E00FFBE04 = {
@@ -301,6 +314,7 @@
 				1E44B7B329E2921600FFBE04 /* Managers */,
 				1E44B7C029E2989E00FFBE04 /* Extensions */,
 				1E44B7C929E2992900FFBE04 /* Helpers */,
+				1E14CD6029EFF41B00B0F6D6 /* Variables */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -626,6 +640,7 @@
 				1E14CD5F29EEA67500B0F6D6 /* TaskTableViewCell.swift in Sources */,
 				1E44B7E029E2D0A600FFBE04 /* TaskViewCell.swift in Sources */,
 				1E44B7D529E29D3100FFBE04 /* Row.swift in Sources */,
+				1E14CD6229EFF43800B0F6D6 /* Colors.swift in Sources */,
 				1E44B7DB29E2A49200FFBE04 /* CalendarTableViewCell.swift in Sources */,
 				1E44B78029E28E3E00FFBE04 /* MainViewController.swift in Sources */,
 				1E12B39829E550F3007404AB /* TaskModelRM.swift in Sources */,
@@ -649,6 +664,7 @@
 				1E44B7C629E298F500FFBE04 /* UITableView.swift in Sources */,
 				1E44B7BB29E2930100FFBE04 /* NewTaskPresenter.swift in Sources */,
 				1E44B7DE29E2B21900FFBE04 /* CalendarViewCell.swift in Sources */,
+				1E14CD6429EFF5C900B0F6D6 /* Images.swift in Sources */,
 				1E44B7D129E29CFC00FFBE04 /* SectionViewModel.swift in Sources */,
 				1E44B7B729E2926700FFBE04 /* ModuleBuilder.swift in Sources */,
 			);

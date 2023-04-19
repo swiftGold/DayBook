@@ -34,7 +34,7 @@ final class NewTaskViewController: UIViewController {
         $0.font = UIFont.systemFont(ofSize: 24)
         $0.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
+        $0.layer.borderColor = UIColor(named: Colors.purple)?.cgColor
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
     }
@@ -72,7 +72,7 @@ final class NewTaskViewController: UIViewController {
         $0.font = UIFont.systemFont(ofSize: 20)
         $0.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
+        $0.layer.borderColor = UIColor(named: Colors.purple)?.cgColor
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
     }
@@ -80,11 +80,11 @@ final class NewTaskViewController: UIViewController {
     private lazy var addTaskButton = make(UIButton(type: .system)) {
         $0.addTarget(self, action: #selector(didTapAddTaskButton), for: .touchUpInside)
         $0.setTitle("Add task", for: .normal)
-        $0.tintColor = UIColor(named: "customBackground")
+        $0.tintColor = UIColor(named: Colors.background)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        $0.backgroundColor = UIColor(named: "customPurple")
+        $0.backgroundColor = UIColor(named: Colors.purple)
         $0.layer.borderWidth = 1.4
-        $0.layer.borderColor = UIColor(named: "customPurple")?.cgColor
+        $0.layer.borderColor = UIColor(named: Colors.purple)?.cgColor
         $0.layer.cornerRadius = 10
     }
     
@@ -144,7 +144,7 @@ extension NewTaskViewController: NewTaskViewControllerProtocol {
     
     func dateError() {
         finishDateLabel.text = "Finish date should to be more then start date"
-        finishDateLabel.textColor = UIColor(named: "customRed")
+        finishDateLabel.textColor = UIColor(named: Colors.red)
     }
     
     func changeSecondTimePickerValue(with date: Date) {
@@ -172,7 +172,7 @@ private extension NewTaskViewController {
     }
     
     func addSubviews() {
-        view.backgroundColor = UIColor(named: "customBackground")
+        view.backgroundColor = UIColor(named: Colors.background)
         stackView.addArrangedSubview(taskNameLabel)
         stackView.addArrangedSubview(taskNameTextField)
         stackView.addArrangedSubview(startDateLabel)
